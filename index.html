@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+     <link href="css/media.css" rel="stylesheet" />
+
+    <title>NEWMANS</title>
+  </head>
+<body>
+
+  <header class="site-header">
+      <div class="header-top py-4 d-none d-lg-block">
+        <div class="container p-xl-0 ">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-5">
+              <span class="header-top__tagline">
+                Private hire caravans and lodges at <span>The South West’s Best Holiday Parks</span>
+              </span>
+            </div>
+
+            <div class="col-auto d-flex gap-4 align-items-end justify-content-end">
+                <a href="tel:01395200974" class="header-top__contact d-flex align-items-end gap-3 ">
+                    <img src="img/phone.png" alt="icon"> 01395 200974
+                </a>
+                <a href="/contact.html" class="header-top__contact d-flex align-items-end gap-3">Contact us</a>
+                <a href="#" class="header-top__contact d-flex align-items-end gap-3 ">
+                  <img src="img/user.png" alt="icon"> Customer Login
+                </a>
+            </div>
+          </div>
+          
+
+          
+        </div>
+      </div>
+
+
+    <div class="header-bottom">
+      <div class="container p-xl-0">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-6 col-sm-4 col-md-3">
+            <a href="/index.html" class="header-bottom__logo d-inline-flex align-items-center ">
+              <img src="img/logo.png" alt="Newmans Holiday Homes" class="header-bottom__logo-img d-none d-lg-block" />
+              <img src="img/mob_logo.png" alt="Newmans Holiday Homes" class="header-bottom__logo-img d-lg-none" />
+            </a>
+          </div>
+          <div class="col d-none d-lg-block">
+            <nav>
+              <ul class=" d-flex gap-4 justify-content-between">
+                <li><a href="index.html/" class="header-bottom__link active">HOME</a></li>
+                <li><a href="/park.html" class="header-bottom__link">PARKS</a></li>
+                <li><a href="/subletting.html" class="header-bottom__link">SUBLETTING WITH NEWMANS</a></li>
+                <li><a href="#" class="header-bottom__link">SPECIAL OFFERS</a></li>
+                <li><a href="/faq.html" class="header-bottom__link">Faqs</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-auto d-flex align-items-center gap-4 d-lg-none">
+            <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="mobileNav">
+              <span class="menu-icon" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="menu-label">Menu</span>
+            </button>
+
+            <a href="#" style="width:33px;">
+              <img src="./img/user.png" alt="icon"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>   
+
+
+<main>
+  <section id="offer">
+    <div class="swiper offer-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide offer-slide ">
+            <img src="img/hero_img.jpg" alt="img">
+
+            <div class="offer__title d-md-none">
+                <span>Private hire caravans and lodges at</span>
+              <h1>The South West’s Best Holiday Parks</h1>
+            </div>
+        </div>
+
+        <div class="swiper-slide offer-slide ">
+            <img src="img/hero_img.jpg" alt="img">
+        </div>
+
+        <div class="swiper-slide offer-slide ">
+            <img src="img/hero_img.jpg" alt="img">
+        </div>
+
+     
+    </div>
+       <div class="swiper-pagination"></div>
+
+    <div class="container p-xl-0">
+      <div class="row ">
+         <div class="col-12 position-relative">
+            <div class="offer-badge">
+              <div class="offer-badge__icon"><img src="img/g3.png" alt="icon"></div>
+                <div class="offer-badge__text"> <span>Excellence</span> through experience</div>
+            </div>
+
+          </div>
+        <div class="col-12 p-0">
+           <div class="offer-card">
+                  <div class="offer-card__title">Find your perfect holiday</div>
+
+                  <form class="offer-form">
+
+
+                    <div class="offer-field">
+                      <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
+                      <select id="location"  aria-label="Location / Park">
+                        <option>Location / Park</option>
+                        <option>Park A</option>
+                        <option>Park B</option>
+                        <option>Park C</option>
+                      </select>
+                    </div>
+
+
+                    <div class="offer-field">
+                      <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
+                      <input type="date" class="form-control" aria-label="Arrival date" placeholder="Enter dates (arrival & departure)">
+                    </div>
+
+
+                    <div class="offer-field">
+                      <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
+                      <select id="guests"  aria-label="Guests">
+                        <option selected>2 adults, 0 children</option>
+                        <option>1 adult</option>
+                        <option>2 adults</option>
+                        <option>2 adults, 1 child</option>
+                        <option>2 adults, 2 children</option>
+                      </select>
+                    </div>
+
+                    <div class="offer-note mt-4 mb-3">
+                      Our normal arrival days are Friday, Saturday and Monday.
+                    </div>
+
+                    <button type="submit" class="btn w-100">
+                      Check availability
+                    </button>
+                  </form>
+            </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+
+<section class="find">
+  <div class="container p-xl-0">
+
+    <div class="row flex gap-4 align-items-end justify-content-between">
+      <div class="col-12 col-md-auto section-head d-flex align-items-center gap-4">
+        <img src="img/map.png" alt="icon" style="width: 30px;">
+        <div>
+          <h2 >Find the Park for you</h2>
+          <p>Six coastal parks waiting for you to explore</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mt-3 mt-md-0">
+        <div class="d-flex gap-2 justify-content-end">
+          <button type="button" class="btn d-flex align-items-center gap-md-3 find__btnFilter">
+           <img src="img/filter.png" alt=""> Filter by
+          </button>
+
+      
+          <button type="button" class="openMap d-flex align-items-center gap-3 find__btnMap btn">
+             <img src="img/location.png" alt="">  On the map
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="findListWrap" class="find-list mt-5">
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-1.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Dawlish Warren, Devon EX7 0PS
+              </div>
+              <h3 class="h5 mb-2">Dawlish Sands</h3>
+              <p class="mb-3">
+                Close to the beach, a family friendly park with something to keep the whole family entertained.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-2.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Brean Sands, Somerset TA8 2RB
+              </div>
+              <h3 class="h5 mb-2">Brean Sands</h3>
+              <p class="mb-3">
+                The place that has it all! Great choice of leisure including a theme park, located right on the coast withe miles of sandy beaches.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-3.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
+              </div>
+              <h3 class="h5 mb-2">Ladram Bay</h3>
+              <p class="mb-3">
+                Family friendly with a private beach. Boasting activities and sea sports and a host of facilities to suit all ages.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-1.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Dawlish Warren, Devon EX7 0PS
+              </div>
+              <h3 class="h5 mb-2">Dawlish Sands</h3>
+              <p class="mb-3">
+                Close to the beach, a family friendly park with something to keep the whole family entertained.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-2.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Brean Sands, Somerset TA8 2RB
+              </div>
+              <h3 class="h5 mb-2">Brean Sands</h3>
+              <p class="mb-3">
+                The place that has it all! Great choice of leisure including a theme park, located right on the coast withe miles of sandy beaches.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="find-card h-100">
+            <div class="find-card__top position-relative">
+              <img src="img/find-3.png" class="img-fluid w-100" alt="">
+              <div class="find-card__rating">★★★★★</div>
+            </div>
+
+            <div class="find-card__body">
+              <div class="find-card__head d-flex align-items-end gap-2 mb-2">
+                <img src="img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
+              </div>
+              <h3 class="h5 mb-2">Ladram Bay</h3>
+              <p class="mb-3">
+                Family friendly with a private beach. Boasting activities and sea sports and a host of facilities to suit all ages.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between gap-1 find-icon mb-3">
+                <img src="img/swim.png" alt="">
+                <img src="img/outline.png" alt="">
+                <img src="img/ticket.png" alt="">
+                <img src="img/walk-the-pet.png" alt="">
+                <img src="img/dish.png" alt="">
+                <img src="img/arcade-game.png" alt="">
+              </div>
+
+              <div class="d-flex find-card__btn justify-content-between gap-2">
+                <a href="#" class="btn">View Park</a>
+                <a href="#" class="btn btn-dark">Last Minute Breaks</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <a href="#" class="btn d-flex mt-5 mx-auto w-content">Load more</a>
+
+        </div>
+      </div>
+    </div>
+
+  
+  
+    <div id="findMapWrap" class="find-map d-none mt-4">
+      <div id="findMap"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="hmc fullbleed">
+  <img src="img/hmc_img.png" alt="icon" class="hmc__img">
+  <div class="container p-xl-0">
+         <div class="row gap-4 justify-content-between">
+      <div class="col-6 col-sm-auto section-head section-head_dark d-flex align-items-center gap-4">
+          <img src="img/hmc_icon.png" alt="icon">
+
+          <div>
+            <h2>Find the holiday to suit you</h2>
+            <p>At the right destination…</p>
+          </div>
+      </div>
+        <div class="cpl-6 col-sm-auto align-items-end gap-2  d-none d-lg-flex">
+            <div class="d-flex align-items-center gap-2 justify-content-betweems-auto">
+              <button class="btn btn-light btn-sm rounded-circle shadow-sm hmc-nav hmc-prev" aria-label="Previous">
+               <img src="img/arrow-left.png" alt="arrow">
+              </button>
+              <button class="btn btn-light btn-sm rounded-circle shadow-sm hmc-nav hmc-next" aria-label="Next">
+                <img src="img/arrow-right.png" alt="arrow">
+              </button>
+            </div> 
+
+        </div>
+    </div>
+  </div>
+
+  <div class="hmc-container d-none d-lg-block px-0">
+
+    
+    <div class="row">
+      <div class="col-12">
+          <div class="hmc-viewport">
+            <ul class="hmc-track">
+
+              <li class="hmc-item hmc-item--big">
+                <img src="img/hmc/hmc_1.jpg" alt="">
+                <span class="hmc-caption">Couple breaks</span>
+              </li>
+
+              <li class="hmc-item hmc-item--big">
+                <img src="img/hmc/hmc_2.jpg" alt="">
+                <span class="hmc-caption">Family holidays</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_3.jpg" alt="">
+                <span class="hmc-caption">Pools</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_4.jpg" alt="">
+                <span class="hmc-caption">Pet friendly</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_1.jpg" alt="">
+                <span class="hmc-caption">Activities</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_2.jpg" alt="">
+                <span class="hmc-caption">Beach</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_3.jpg" alt="">
+                <span class="hmc-caption">Park</span>
+              </li>
+
+              <li class="hmc-item">
+                <img src="img/hmc/hmc_4.jpg" alt="">
+                <span class="hmc-caption">Rides</span>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container d-lg-none">
+    <div class="row mt-4">
+      <div class="col-12">
+          <div class="swiper find-holiday">
+            <div class="swiper-wrapper">
+
+   
+              <a class="swiper-slide holiday-card" href="#">
+                <img src="img/hmc/hmc_1.jpg" alt="Couple breaks">
+                <span class="holiday-card__title">Couple breaks</span>
+              </a>
+
+              <a class="swiper-slide holiday-card" href="#">
+                <img src="img/hmc/hmc_2.jpg" alt="Family holidays">
+                <span class="holiday-card__title">Family holidays</span>
+              </a>
+
+              <a class="swiper-slide holiday-card" href="#">
+                <img src="img/hmc/hmc_3.jpg" alt="Pools">
+                <span class="holiday-card__title">Pools</span>
+              </a>
+
+              <a class="swiper-slide holiday-card" href="#">
+                <img src="img/hmc/hmc_4.jpg" alt="Activities">
+                <span class="holiday-card__title">Activities</span>
+              </a>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section id="lastminute" class="py-5">
+  <div class="container p-xl-0">
+    <div class="row gap-4 justify-content-between">
+      <div class="col-6 col-sm-auto section-head section-head_dark d-flex align-items-center gap-4">
+          <img src="img/lastminute_icon.png" alt="icon">
+
+          <div>
+            <h2>Last minute availability</h2>
+            <p>See our wide range of last minute holidays across 6 parks</p>
+          </div>
+      </div>
+        <div class="cpl-6 col-sm-auto d-flex align-items-end gap-3  ">
+            <span>(24 holidays)</span>
+            <div class="d-flex align-items-center gap-2 justify-content-between ms-auto">
+              <button class="btn btn-light btn-sm rounded-circle shadow-sm lastmin-prev" aria-label="Previous">
+               <img src="img/arrow-left.png" alt="arrow">
+              </button>
+              <button class="btn btn-light btn-sm rounded-circle shadow-sm lastmin-next" aria-label="Next">
+                <img src="img/arrow-right.png" alt="arrow">
+              </button>
+            </div> 
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+  
+        <div class="lastmin-viewport">
+          <div class="swiper lastmin-swiper">
+            <div class="swiper-wrapper">
+       
+              <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+                            <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+                            <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+                            <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+                            <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+                            <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-1.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-2.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-3.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-4.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="lm-card">
+                  <a href="#">
+                    <div class="lm-card__media">
+                        <img src="img/lastminute-5.png" alt="">
+                  
+                    </div>
+                    
+                  <div class="lm-card__body">
+                    <div class="lm-card__title">Brean Sands</div>
+
+                    <div class="lm-price">£421.14</div>
+                    <div class="lm-date">Fri 13th June, 7 nights</div>
+                    <div class="lm-meta">
+                      12’ Premium
+                    </div>
+                    <p class="lm-desc mb-0">
+                      Newly available dates! Central heating, enclosed patio
+                    </p>
+                  </div>
+
+                  </a>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-4 mt-md-5 text-center">
+           <a href="#" class="btn lastminute__btn">See all featured special offers</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="subletting">
+  <div class="container p-xl-0">
+
+    <div class="row">
+      <div class="col-12 section-head d-flex align-items-center gap-4">
+          <img src="img/buy-home.png" alt="icon">
+
+          <div>
+            <h2>Subletting with Newmans</h2>
+            <p>Over 25 years’ experience in letting caravans and lodges</p>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="row  row-cols-3 row-cols-lg-6 g-3 text-center my-4">
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-1.png" alt="">
+          </div>
+          <div class="sub-caption">Guaranteed<br>income</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-2.png" alt="">
+          </div>
+          <div class="sub-caption">Free<br>cleaning</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-3.png" alt="">
+          </div>
+          <div class="sub-caption">Maintenance<br>Service</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-4.png" alt="">
+          </div>
+          <div class="sub-caption">Dedicated<br>team</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-5.png" alt="">
+          </div>
+          <div class="sub-caption">Online<br>advertising</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="sub-feature">
+          <div class="sub-ico mx-auto mb-2 mb-md-3">
+           <img src="img/subletting-6.png" alt="">
+          </div>
+          <div class="sub-caption">Owner’s calendar<br>&amp; accounts</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto mt-4 mb-4 mb-md-5">
+        <p class="text-center o-7 ff-sans opacity-75 fw-light">
+          Newmans sublet 267 privately owned luxury holiday caravans and lodges across 6 parks. When you book with
+          Newman’s you can be sure to receive excellent service. From the moment you select your perfect holiday caravan
+          or lodge in your chosen location, you have the added reassurance that our customer service team are just a phone
+          call away. Also, if you’re staying at Devon Cliffs, our office is conveniently located just outside the holiday park.
+        </p>
+      </div>
+    </div>
+
+ 
+    <div class="text-center">
+      <a href="#" class="btn btn-lg px-3">Learn more about subletting</a>
+    </div>
+
+  </div>
+</section>
+
+<section class=" testimonials">
+  <div class="container p-xl-0">
+    <div class="row">
+      <div class="col-auto section-head section-head_dark d-flex align-items-center gap-4">
+          <img src="img/review.png" alt="icon">
+
+          <div>
+            <h2>Our guests leave happy…</h2>
+            <p>Getting great review from our guests keeps us truly motivated</p>
+          </div>
+      </div>
+    </div>
+  
+
+    <div class="swiper tstm-swiper">
+      <div class="swiper-wrapper">
+
+   
+        <div class="swiper-slide">
+          <div class="tstm-card">
+            <div class="row  align-items-start">
+         
+              <div class="col-md-5 col-lg-4 d-none d-md-block">
+                <figure class="tstm-media mb-2">
+                  <img src="img/testimonials-1.png" alt="">
+                </figure>
+                <div class="tstm-card__title d-flex align-items-center gap-2 small ">
+                  <img src="img/map.png" alt=""><span>Brean Sands</span>
+                </div>
+              </div>
+            
+              <div class="col-12 col-md-7 col-lg-8 text-center">
+                <div class="tstm-stars" aria-label="5 out of 5">★★★★★</div>
+                <h3>We recently stayed at Unity Holiday…</h3>
+                <p>
+                  We recently stayed at Unity Holiday Park in Brean. The caravan was brilliant, very clean,
+                  near to the beach. Had a dishwasher &amp; coffee machine, cleaning products, pegs, clothes airer.
+                  Fantastic stay, all you need on site. Really cannot fault, the staff were amazing and really helpful.
+                  Really friendly guests too. Highly recommend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <div class="swiper-slide">
+          <div class="tstm-card">
+            <div class="row  align-items-start">
+             
+              <div class="col-md-5 col-lg-4 d-none d-md-block">
+                <figure class="tstm-media mb-2">
+                  <img src="img/testimonials-1.png" alt="">
+                </figure>
+                <div class="tstm-card__title d-flex align-items-center gap-2 small ">
+                  <img src="img/map.png" alt=""><span>Brean Sands</span>
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-7 col-lg-8 text-center">
+                <div class="tstm-stars" aria-label="5 out of 5">★★★★★</div>
+                <h3>We recently stayed at Unity Holiday…</h3>
+                <p>
+                  We recently stayed at Unity Holiday Park in Brean. The caravan was brilliant, very clean,
+                  near to the beach. Had a dishwasher &amp; coffee machine, cleaning products, pegs, clothes airer.
+                  Fantastic stay, all you need on site. Really cannot fault, the staff were amazing and really helpful.
+                  Really friendly guests too. Highly recommend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <div class="swiper-slide">
+          <div class="tstm-card">
+            <div class="row  align-items-start">
+            
+              <div class="col-md-5 col-lg-4 d-none d-md-block">
+                <figure class="tstm-media mb-2">
+                  <img src="img/testimonials-1.png" alt="">
+                </figure>
+                <div class="tstm-card__title d-flex align-items-center gap-2 small ">
+                  <img src="img/map.png" alt=""><span>Brean Sands</span>
+                </div>
+              </div>
+    
+              <div class="col-12 col-md-7 col-lg-8 text-center">
+                <div class="tstm-stars" aria-label="5 out of 5">★★★★★</div>
+                <h3>We recently stayed at Unity Holiday…</h3>
+                <p>
+                  We recently stayed at Unity Holiday Park in Brean. The caravan was brilliant, very clean,
+                  near to the beach. Had a dishwasher &amp; coffee machine, cleaning products, pegs, clothes airer.
+                  Fantastic stay, all you need on site. Really cannot fault, the staff were amazing and really helpful.
+                  Really friendly guests too. Highly recommend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+</main>
+
+
+
+
+<footer id="site-footer">
+  <div class="footer-top py-5">
+    <div class="container p-xl-0 text-center">
+      <div class="mb-3">
+        <div class="footer-logo mx-auto">
+          <a href="index.html">
+            <img src="img/footer_logo.png" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center my-4 my-md-5">
+        <a href="#" aria-label="Facebook" class="social-circle">
+          <img src="img/facebook.png" alt="">
+        </a>
+      </div>
+
+     <nav class="mb-4">
+        <ul class="list-inline m-0">
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/park.html" class="footer-link">Parks</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/subletting.html" class="footer-link">Subletting</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/faq.html" class="footer-link">FAQs</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/contact.html" class="footer-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+ 
+      <div class="footer-address mb-4">
+        <div>Dawlish Sands Holiday Park</div>
+        <div>Warren Road, Dawlish Warren, Devon EX7 0PQ</div>
+      </div>
+
+       <a href="tel:01395200974" class="header-top__contact d-flex justify-content-center align-items-end gap-3 mb-4 mb-md-5">
+                    <img src="img/phone.png" alt="icon"> 01395 200974
+                </a>
+
+  
+      <nav class="menu-info">
+        <ul class="list-inline m-0 small">
+          <li class="list-inline-item mx-3"><a href="#" >Cookies Policy</a></li>
+          <li class="list-inline-item mx-3"><a href="#" >Privacy Policy</a></li>
+          <li class="list-inline-item mx-3"><a href="#" >T&Cs</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    <div class="container text-center small py-4 ff-sans fw-light">
+      Dawlish Sands Caravans Ltd is part of N H H Holdings Ltd, a company registered in England No. 08743459
+    </div>
+  </div>
+</footer>
+
+
+<div class="modalMenu d-lg-none"  id="mobileNav">
+  <div class="modalMenu__overlay" tabindex="-1"></div>
+
+  <div class="modalMenu__block" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <button class="modalMenu__close" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+
+    <ul class="modalMenu__list">
+        <li><a href="index.html/">HOME</a></li>
+        <li><a href="/park.html">PARKS</a></li>
+        <li><a href="/subletting.html">SUBLETTING WITH NEWMANS</a></li>
+        <li><a href="#">SPECIAL OFFERS</a></li>
+        <li><a href="/faq.html">Faqs</a></li>
+    </ul>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

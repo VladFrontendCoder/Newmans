@@ -1,0 +1,434 @@
+@media screen and (max-width: 1200px) {
+	.find-card__btn a {
+	    font-size: 16px;
+	}
+
+	 #section-nav {
+	 	background: #fff;
+	 	padding: 35px 0;
+	}
+
+	.section-nav-list a {
+		    padding: 12px 16px;
+    border-radius: 4px;
+    background: #DBB76E;
+    border: 1px solid transparent;
+	}
+
+	.section-nav-list a.active {
+		 border: 1px solid #133351;
+	}
+
+	.section-nav-list a.active::after {
+		display: none;
+	}
+
+	.section-nav-list {
+	    gap: 8px;
+	}
+
+	.section-head_title h1 {
+	    font-size: 45px;
+	}
+
+	.section-head_title p {
+	    font-size: 24px;
+	}
+
+	#edge-gallery {
+		overflow: hidden;
+	}
+}
+
+@media screen and (max-width: 992px) {
+
+.menu-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#d4bf76;                /* золотой текст */
+  border:none;
+  border-radius:6px;
+  font-weight:700;
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.menu-btn:focus-visible{
+  outline:2px solid #d4bf76;
+  outline-offset:2px;
+}
+
+/* иконка гамбургера */
+.menu-icon{
+  position:relative;
+  width:24px;
+  height:16px;
+  display:inline-block;
+}
+.menu-icon > span{
+  position:absolute;
+  left:0; right:0;
+  height:2px;
+  background:#d4bf76;
+  border-radius:2px;
+  transition:transform .25s ease, opacity .2s ease, top .25s ease;
+}
+.menu-icon > span:nth-child(1){ top:0; }
+.menu-icon > span:nth-child(2){ top:7px; }
+.menu-icon > span:nth-child(3){ top:14px; }
+
+/* состояние ОТКРЫТО (крестик) */
+.menu-btn.is-open .menu-icon > span:nth-child(1){
+  top:7px; transform:rotate(45deg);
+}
+.menu-btn.is-open .menu-icon > span:nth-child(2){
+  opacity:0;
+}
+.menu-btn.is-open .menu-icon > span:nth-child(3){
+  top:7px; transform:rotate(-45deg);
+}
+
+
+.header-bottom {
+	background: #133351;
+}
+
+
+.find-title{ color:#173a59; font-weight:700; font-size:28px; }
+.find-underline{ width:140px; height:2px; background:#caa24b; }
+.find-sub{ color:#173a59; font-size:18px; }
+
+/* Карточка-слайд */
+.find-holiday{ overflow:visible; }
+.find-holiday .swiper-wrapper{ padding-bottom:32px; } /* место под точки */
+
+.holiday-card{
+  position:relative;
+  display:block;
+  border-radius:4px;
+  overflow:hidden;
+  height: 255px;                 /* мобильная высота */
+}
+.holiday-card img{
+  height:100%; 
+}
+
+/* затемнение снизу и заголовок */
+.holiday-card::after{
+  content:""; position:absolute; inset:auto 0 0 0; height:45%;
+  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+}
+.holiday-card__title{
+  position:absolute; left:20px; bottom:20px;
+  color:#fff; font-weight:800; font-size:24px;
+  z-index: 2;
+}
+
+/* Пагинация */
+.find-holiday.swiper-pagination{ bottom:0; }
+.find-holiday .swiper-pagination-bullet{
+  width:10px; height:10px; background:#DBB76E;;
+  opacity: .8;
+}
+.find-holiday .swiper-pagination-bullet-active{ 
+width: 12px;
+height: 12px;  
+  opacity: 1;
+  
+ }
+
+ .hmc__img {
+    top: 0;
+    width: 55%;
+}
+
+.offer-badge {
+    right: 10px;
+}
+
+
+.no-scroll{ overflow:hidden; touch-action:none; }
+
+/* контейнер модалки */
+.modalMenu{
+  position:fixed; inset:0; z-index:1050;
+  display:none;                  /* скрываем через [hidden] */
+}
+
+/* затемняющий фон */
+.modalMenu__overlay{
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.45);
+  opacity:0; transition:opacity .25s ease;
+}
+
+/* панель (выезжает сверху) */
+.modalMenu__block{
+  position:absolute; left:0; right:0; top:0;
+  background:#11324a; color:#fff;
+  border-bottom-left-radius:16px; border-bottom-right-radius:16px;
+  padding:18px 18px 24px;
+  box-shadow:0 18px 36px rgba(0,0,0,.25);
+  transform:translateY(-105%); transition:transform 2s ease;
+}
+
+/* крестик внутри панели */
+.modalMenu__close{
+  position:absolute; right:10px; top:10px;
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid #d4bf76; background:transparent;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+.modalMenu__close span{
+  position:absolute; width:18px; height:2px; background:#d4bf76;
+}
+.modalMenu__close span:nth-child(1){ transform:rotate(45deg); }
+.modalMenu__close span:nth-child(2){ transform:rotate(-45deg); }
+
+/* список */
+.modalMenu__list{text-align: center; margin:48px 0 8px; padding:0; }
+.modalMenu__list li + li{ margin-top:6px; }
+.modalMenu__list a{
+  display:block; padding:14px 10px;
+  color:#f6f6f6; text-decoration:none; font-weight:700; font-size:18px;
+  border-radius:10px;
+}
+.modalMenu__list a:hover{ background:rgba(255,255,255,.08); }
+
+/* открытое состояние */
+.modalMenu.is-open .modalMenu__overlay{ opacity:1; }
+.modalMenu.is-open .modalMenu__block{ transform:translateY(0); }
+
+/* убрать дефолтный focus-скелет, но оставить доступность */
+.modalMenu__close:focus-visible,
+.modalMenu__list a:focus-visible{
+  outline:2px solid #d4bf76; outline-offset:2px;
+}
+
+.modalMenu.is-open{ display:block; }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .container   {
+    max-width: 500px;
+  }
+
+
+	.offer-card__title, .section-head h2, .section-head_title h1 {
+	    font-size: 24px;
+	}	
+
+	.offer-card {
+	    padding: 30px 15px;
+      max-width: 100%;
+      box-shadow: none;
+      margin-top: 50px;
+      position: static;
+	}
+
+  .find h3 { font-size: 21.6px; }
+
+.find-card__btn a:last-child {
+    max-width: 67%;
+}
+
+.find__btnFilter {
+	font-size: 0;
+	gap: 0;
+}
+
+.section-head img, .section-head > img, .info-block div > img {
+    width: 25px!important;
+}
+
+.find-card__head img {
+    width: 23px;
+}
+
+
+.find {
+    padding: 40px 0;
+}
+
+.section-head p {
+    font-size: 14px!important;
+    font-weight: 300;
+}
+
+
+.section-head:not(.section-head_title) p:first-of-type, .info-block div p {
+    font-size: 14px;
+}
+
+.sub-ico {
+    width: 50px;
+}
+
+.sub-caption, .tstm-card p, .custom-list p, .custom-list li, .faq-cat-btn {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.btn {
+    font-size: 18px;
+}
+
+
+.subletting, .testimonials, .local-area-intro {
+    padding: 50px 0;
+}
+
+.tstm-swiper {
+    margin-top: 20px;
+}
+
+.footer-link {
+	font-size: 16px;
+}
+
+    .section-nav-list a {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .properties__title {
+	    font-size: 18px;
+	    margin-bottom: 15px;
+	}
+
+	 #properties .row.flex-nowrap{ scroll-snap-type: x mandatory; }
+  #properties .row.flex-nowrap > [class*="col-"]{ scroll-snap-align: start; }
+  /* скроем полосу прокрутки на iOS/Chrome */
+  #properties .row.flex-nowrap{ -webkit-overflow-scrolling: touch; }
+  #properties .row.flex-nowrap::-webkit-scrollbar{ display:none; }
+
+  .benefits .btn-bn {
+    width: max-content;
+    margin: auto;
+}
+
+.benefits {
+    padding-bottom: 50px;
+}
+
+#cta-subletting h2 {
+  width: auto;
+}
+
+.mosaic-swiper .swiper-slide {
+    padding: 0 6px;
+    height: 213px;
+
+}
+
+.mosaic-swiper .swiper-slide img {
+  border-radius: 4px;
+  height: 100%;
+}
+
+.mosaic-nav {
+  position: static;
+      transform: none;
+}
+
+.faq-cat-btn {
+    padding: 5px 0;
+}
+
+.accordion-button::after {
+  width: 17px;
+  height: 17px;
+          background-size: 65%;
+}
+
+.accordion-body {
+    font-size: 12px;
+}
+
+.text-section {
+    font-size: 14px;
+    padding: 0px 0 50px;
+}
+
+
+.offer-slide img {
+    filter: brightness(0.5);
+}
+
+
+.offer-badge {
+transform: translateX(-50%);
+        left: 50%;
+        bottom: -60px;
+        right: 0;
+}
+
+.offer-slide {
+  height: 280px;
+}
+
+.hmc-nav img, .facilities-nav img, .mosaic-nav img {
+    width: 10px!important;
+}
+
+#lastminute .lastmin-prev, #lastminute .lastmin-next,#facilities .lastmin-prev, #facilities .lastmin-next, #local-area .lastmin-prev, #local-area .lastmin-next {
+    width: 35px;
+    height: 35px;
+}
+
+.offer__title {
+    position: absolute;
+    top: 36px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    width: 76%;
+}
+
+.offer__title span {
+  font-size: 14px;
+}
+
+
+}
+
+@media screen and (max-width: 576px) {
+
+.container {
+  max-width: 390px;
+}
+
+	 .offer-card { width: 100%; }
+      .offer-badge { 
+        width: 150px; 
+        height: 150px; 
+      }
+
+     .la-img, .facility-img {
+   
+     	    height: 200px;
+     }
+
+     .edge-swiper img {
+	    
+	    height: 120px;
+	    border-radius: 4px;
+	}
+
+.offer-badge__text span {
+      margin-bottom: 7px;
+    font-size: 24px;
+}
+
+.offer-badge__text {
+    font-size: 14px;
+}
+
+}
