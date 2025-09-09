@@ -623,7 +623,7 @@ function markerIcon(active = false){
           </p>
 
           <div class="d-flex find-card__btn justify-content-between gap-2">
-            <a href="#" class="btn">View Park</a>
+            <a href="/Newmans/park_facilities.html" class="btn">View Park</a>
             <a href="#" class="btn btn-dark">Last Minute Breaks</a>
           </div>
         </div>
