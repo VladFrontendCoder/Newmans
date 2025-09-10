@@ -463,7 +463,7 @@ function applyRolesWithFlip(preRects, options = {}) {
       address: 'Brean Sands, Somerset TA8 2RB',
       lat: 51.315, lng: -3.006,
       rating: 4.7,
-      img: 'https://images.unsplash.com/photo-1540448051976-24bb68980d51?q=80&w=1600&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop',
       text: 'The place that has it all! Great choice of leisure including a theme park, located right on the coast with miles of sandy beaches.'
     },
     {
@@ -481,7 +481,7 @@ function applyRolesWithFlip(preRects, options = {}) {
       address: 'Budleigh Salterton, Devon EX9 7BX',
       lat: 50.627, lng: -3.299,
       rating: 4.8,
-      img: 'https://images.unsplash.com/photo-1517955623995-7dd0d8dc8f91?q=80&w=1600&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop',
       text: 'Stunning private beach. Boasting activities and sea sports and a host of facilities to suit all ages.'
     },
     {
@@ -490,7 +490,7 @@ function applyRolesWithFlip(preRects, options = {}) {
       address: 'Goodrington, Paignton TQ4',
       lat: 50.423, lng: -3.560,
       rating: 4.5,
-      img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop',
       text: 'Sea views, pools and a warm welcome for the whole family.'
     }
   ];
@@ -674,15 +674,13 @@ function markerIcon(active = false){
     display.value = native.value ? fmt(native.value) : '';
   });
 
-  // клик по красивому инпуту — открыть системный пикер (если поддерживается)
-  display.addEventListener('click', () => {
-    if (native.showPicker) native.showPicker(); else native.focus();
-  });
+display.addEventListener('click', () => {
+  if (native.showPicker) native.showPicker(); else native.click();
+});
 
-  // на всякий случай — клик по всей обёртке тоже откроет пикер
-  field.addEventListener('click', (e) => {
-    if (e.target === field) {
-      if (native.showPicker) native.showPicker(); else native.focus();
-    }
-  });
+field.addEventListener('click', (e) => {
+  if (e.target === field) {
+    if (native.showPicker) native.showPicker(); else native.click();
+  }
+});
 });

@@ -476,12 +476,14 @@ input[type="date"].field-control{
 
 /* Прозрачные нативные инпуты поверх: клики открывают системный пикер */
 .date-native {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  opacity: 0; cursor: pointer;
-  -webkit-appearance: none; appearance: none;
-  border: 0; background: transparent;
-  z-index: -2;
+ inset:0;
+  width:100%; height:100%;
+           /* почти невидим, но кликабелен на iOS */
+  background:transparent; border:0;
+  cursor:pointer;
+  z-index:2;               /* выше .date-display */
+  -webkit-appearance:auto; /* важно для iOS */
+  appearance:auto;
 }
 /* По умолчанию кликаем начало, конец активируем после выбора */
 .offer-field--daterange .dr-end{ pointer-events: none; }
