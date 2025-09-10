@@ -476,9 +476,9 @@ input[type="date"].field-control{
 
 /* Прозрачные нативные инпуты поверх: клики открывают системный пикер */
 .date-native {
- inset:0;
+  position:absolute; inset:0;
   width:100%; height:100%;
-           /* почти невидим, но кликабелен на iOS */
+  opacity:0.01;            /* почти невидим, но кликабелен на iOS */
   background:transparent; border:0;
   cursor:pointer;
   z-index:2;               /* выше .date-display */

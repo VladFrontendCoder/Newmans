@@ -674,7 +674,7 @@ function markerIcon(active = false){
     display.value = native.value ? fmt(native.value) : '';
   });
 
-display.addEventListener('click', () => {
+native.addEventListener('click', () => {
   if (native.showPicker) native.showPicker(); else native.click();
 });
 
