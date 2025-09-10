@@ -503,12 +503,12 @@ function applyRolesWithFlip(preRects, options = {}) {
       // вернуться к списку
       wrapMap.classList.add('d-none');
       wrapList.classList.remove('d-none');
-      btnOpen.innerHTML = '<img src="/NEWMANS/img/location.png" alt="">  On the map';
+      btnOpen.innerHTML = '<img src="/Newmans/img/location.png" alt="">  On the map';
     } else {
       // показать карту
       wrapList.classList.add('d-none');
       wrapMap.classList.remove('d-none');
-      btnOpen.innerHTML = '<img src="/NEWMANS/img/grid.png" alt=""> List view';
+      btnOpen.innerHTML = '<img src="/Newmans/img/grid.png" alt=""> List view';
 
       // инициализируем карты только один раз
       if (!mapLoaded) {
@@ -576,8 +576,8 @@ function applyRolesWithFlip(preRects, options = {}) {
 
   const PIN_W = 34;                // ширина пина в px
 const PIN_H = 45;                // высота пина в px
-const PIN_URL_DEFAULT = '/NEWMANS/img/pin-blue.png';   // обычный
-const PIN_URL_ACTIVE  = '/NEWMANS/img/pin-gold.png';   // активный (по клику)
+const PIN_URL_DEFAULT = '/Newmans/img/pin-blue.png';   // обычный
+const PIN_URL_ACTIVE  = '/Newmans/img/pin-gold.png';   // активный (по клику)
 
   // Простая SVG-иконка маркера: активная/обычная
 function markerIcon(active = false){
@@ -597,7 +597,7 @@ function markerIcon(active = false){
 
         <div >
           <div class="find-card__head d-flex align-items-end gap-2 mb-2">
-            <img src="/NEWMANS/img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
+            <img src="/Newmans/img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
           </div>
           <h3 class="h5 mb-2">${p.title}</h3>
           <p class="mb-3">
