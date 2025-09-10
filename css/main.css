@@ -3,7 +3,7 @@
   src:
     url("../fonts/AddingtonCF-thin.woff2") format("woff2"),
     url("../fonts/AddingtonCF-thin.woff") format("woff");
-  font-weight: 100; /* Thin */
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
@@ -13,7 +13,7 @@
   src:
     url("../fonts/AddingtonCF-thinItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-thinItalic.woff") format("woff");
-  font-weight: 100; /* Thin */
+  font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
@@ -23,7 +23,7 @@
   src:
     url("../fonts/AddingtonCF-light.woff2") format("woff2"),
     url("../fonts/AddingtonCF-light.woff") format("woff");
-  font-weight: 300; /* Light */
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -33,7 +33,7 @@
   src:
     url("../fonts/AddingtonCF-lightItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-lightItalic.woff") format("woff");
-  font-weight: 300; /* Light */
+  font-weight: 300; 
   font-style: italic;
   font-display: swap;
 }
@@ -43,7 +43,7 @@
   src:
     url("../fonts/AddingtonCF-Regular.woff2") format("woff2"),
     url("../fonts/AddingtonCF-Regular.woff") format("woff");
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -53,7 +53,7 @@
   src:
     url("../fonts/AddingtonCF-RegularItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-RegularItalic.woff") format("woff");
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
@@ -63,7 +63,7 @@
   src:
     url("../fonts/AddingtonCF-Medium.woff2") format("woff2"),
     url("../fonts/AddingtonCF-Medium.woff") format("woff");
-  font-weight: 500; /* Medium */
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -73,7 +73,7 @@
   src:
     url("../fonts/AddingtonCF-MediumItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-MediumItalic.woff") format("woff");
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-style: italic;
   font-display: swap;
 }
@@ -83,7 +83,7 @@
   src:
     url("../fonts/AddingtonCF-Demibold.woff2") format("woff2"),
     url("../fonts/AddingtonCF-Demibold.woff") format("woff");
-  font-weight: 600; /* DemiBold */
+  font-weight: 600; 
   font-style: normal;
   font-display: swap;
 }
@@ -93,7 +93,7 @@
   src:
     url("../fonts/AddingtonCF-DemiboldItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-DemiboldItalic.woff") format("woff");
-  font-weight: 600; /* DemiBold */
+  font-weight: 600; 
   font-style: italic;
   font-display: swap;
 }
@@ -103,7 +103,7 @@
   src:
     url("../fonts/AddingtonCF-Bold.woff2") format("woff2"),
     url("../fonts/AddingtonCF-Bold.woff") format("woff");
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-style: normal;
   font-display: swap;
 }
@@ -113,7 +113,7 @@
   src:
     url("../fonts/AddingtonCF-BoldItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-BoldItalic.woff") format("woff");
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-style: italic;
   font-display: swap;
 }
@@ -123,7 +123,7 @@
   src:
     url("../fonts/AddingtonCF-extrabold.woff2") format("woff2"),
     url("../fonts/AddingtonCF-extrabold.woff") format("woff");
-  font-weight: 800; /* ExtraBold */
+  font-weight: 800; 
   font-style: normal;
   font-display: swap;
 }
@@ -133,22 +133,17 @@
   src:
     url("../fonts/AddingtonCF-extraboldItalic.woff2") format("woff2"),
     url("../fonts/AddingtonCF-extraboldItalic.woff") format("woff");
-  font-weight: 800; /* ExtraBold */
+  font-weight: 800;
   font-style: italic;
   font-display: swap;
 }
-
-/* ==========================================
-   ITC AVANT GARDE GOTHIC PRO — семейство
-   (Book = 400, Medium = 500)
-   ========================================== */
 
 @font-face {
   font-family: "ITC Avant Garde Gothic Pro";
   src:
     url("../fonts/ITCAvantGardePro-Bk.woff2") format("woff2"),
     url("../fonts/ITCAvantGardePro-Bk.woff") format("woff");
-  font-weight: 400; /* Book */
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -158,7 +153,7 @@
   src:
     url("../fonts/ITCAvantGardePro-Md.woff2") format("woff2"),
     url("../fonts/ITCAvantGardePro-Md.woff") format("woff");
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-style: normal;
   font-display: swap;
 }
@@ -264,7 +259,6 @@ color: #fff;
   color: #fff;
 }
 
-/* ===== HEADER TOP ===== */
 .header-top {
   background-color: #133351;
 }
@@ -295,8 +289,6 @@ color: #fff;
 .header-top__contact:hover {
       color: #a9905e;
 }
-
-/* ===== HEADER BOTTOM ===== */
 
 .header-bottom {
   padding: 35px 0; 
@@ -355,7 +347,6 @@ color: #fff;
       height: 100%;
     }
   
-    /* === Left card === */
     .offer-card {
      padding: 30px 40px;
      border-radius: 4px;
@@ -391,15 +382,11 @@ color: #fff;
     border-radius: 4px 4px 0 0;
     }
 
-
-
-/* обёртка — якорь для иконки и стрелки */
 .offer-field{
   position: relative;
   margin-bottom: 14px;
 }
 
-/* единый стиль для input/select */
 .offer-field .field-control{
     display: block;
     width: 100%;
@@ -417,17 +404,16 @@ color: #fff;
     background-clip: padding-box;
 }
 
-/* select: дополнительно выключаем стрелку в старых движках */
+
 .offer-field select.field-control{
   -moz-appearance: none;
 }
-select.field-control::-ms-expand{ display:none; } /* IE/старый Edge */
+select.field-control::-ms-expand{ display:none; } 
 
 .offer-field .field-control::placeholder {
   color: #123351;
 }
 
-/* иконка слева */
 .offer-field .field-icon{
   position: absolute;
   left: 14px;
@@ -438,7 +424,6 @@ select.field-control::-ms-expand{ display:none; } /* IE/старый Edge */
   z-index: 1;
 }
 
-/* своя стрелка справа вместо нативной */
 .offer-field::after{
   content: "";
   position: absolute;
@@ -448,13 +433,11 @@ select.field-control::-ms-expand{ display:none; } /* IE/старый Edge */
   width: 12px; height: 12px;
   pointer-events: none;
 
-  /* можно через mask, цвет задаём background-color */
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="%23123351" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
   mask:         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="%23123351" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
   background-color: #123351;
 }
 
-/* дата-пикер на iOS имеет свои метрики — чуть подровняем */
 input[type="date"].field-control{
   min-height: 48px;
   line-height: normal;
@@ -463,7 +446,7 @@ input[type="date"].field-control{
 }
 
 
-/* Стрелка справа у поля диапазона */
+
 .offer-field--daterange::after{
   content: "";
   position: absolute; right: 14px; top: 50%;
@@ -474,18 +457,18 @@ input[type="date"].field-control{
   background-color: #123351;
 }
 
-/* Прозрачные нативные инпуты поверх: клики открывают системный пикер */
+
 .date-native {
   position:absolute; inset:0;
   width:100%; height:100%;
-  opacity:0.01;            /* почти невидим, но кликабелен на iOS */
+  opacity:0.01;        
   background:transparent; border:0;
   cursor:pointer;
-  z-index:2;               /* выше .date-display */
-  -webkit-appearance:auto; /* важно для iOS */
+  z-index:2;        
+  -webkit-appearance:auto;
   appearance:auto;
 }
-/* По умолчанию кликаем начало, конец активируем после выбора */
+
 .offer-field--daterange .dr-end{ pointer-events: none; }
 
 
@@ -527,9 +510,6 @@ input[type="date"].field-control{
 font-size: 12px;
  }
 
-
-
-    /* === Badge on the right === */
     .offer-badge {
     position: absolute;
     right: 0;
@@ -570,7 +550,6 @@ font-size: 12px;
       color: #133351;
     }
 
-    /* Swiper pagination */
     .swiper-pagination-bullets .swiper-pagination-bullet{
       width: 10px; height: 10px; background:#fff;;
     }
@@ -703,7 +682,7 @@ margin-bottom: 15px;
   width: 100%;
 }
 
-/* Swiper dots на картках */
+
 .swiper-pagination-bullets {
   bottom: 10px;
 }
@@ -825,7 +804,6 @@ line-height: 22px;}
   padding: 65px 0;
 }
 
-/* features */
 .sub-ico {
   width: 67px;
 }
@@ -842,16 +820,11 @@ background: rgb(19 51 81 / 8%);
 }
 
 
-/* palette helpers */
-
-
-/* slider container */
 .tstm-swiper{ 
   margin-top: 85px;
   padding-bottom: 26px; 
 }
 
-/* dots */
 .tstm-swiper .swiper-pagination-bullet{
   width:10px; height:10px; background:#133351; opacity:.3;
 }
@@ -860,7 +833,6 @@ width: 13px;
 height: 13px; }
 
 
-/* media */
 .tstm-media{
 border-radius: 4px;
 overflow: hidden;
@@ -871,7 +843,7 @@ height: 206px;
   height: 100% ;
 }
 
-/* stars */
+
 .tstm-stars{
   color:#0e2940;
   font-weight:800;
@@ -918,7 +890,6 @@ width: 15px;
   background-repeat: no-repeat;
 }
 
-/* logo placeholder */
 .footer-logo{ width:175px; }
 
 .social-circle {
@@ -1096,13 +1067,12 @@ font-size: 60px;
   padding-bottom: 85px;
 }
 
-/* Секция */
+
 #cta-subletting, #section-nav{
-  background: #DBB76E;   /* золотой фон */
+  background: #DBB76E;
 }
 
 
-/* Линия под заголовком */
 #cta-subletting .cta-underline{
   width: 180px;
   height: 2px;
@@ -1110,7 +1080,6 @@ font-size: 60px;
 }
 
 
-/* список */
 .section-nav-list{
   display:flex;
   flex-wrap:nowrap;
@@ -1129,7 +1098,6 @@ font-size: 60px;
   position:relative;
 }
 
-/* активный пункт */
 .section-nav-list a.active{
   background:#fff;
 }
@@ -1200,7 +1168,6 @@ font-size: 60px;
 } 
 
 
-/* helper colors */
 
 
 /* image */
@@ -1223,7 +1190,7 @@ overflow: hidden;
 }
 
 
-/* стрелки */
+
 .mosaic-nav{
   position:absolute; top:50%; transform:translateY(-50%);
   z-index:3; width:45px; height:45px; border:0; border-radius:50%;
@@ -1236,14 +1203,14 @@ overflow: hidden;
   background: #a9905e;
 }
 
-/* слайд */
-.mosaic-swiper{ overflow: visible; }
-.mosaic-swiper .swiper-slide{ padding: 0 6px; } /* небольшой воздух между слайдами на узких */
 
-/* мозаика */
+.mosaic-swiper{ overflow: visible; }
+.mosaic-swiper .swiper-slide{ padding: 0 6px; }
+
+
 .mosaic{
   display:grid;
-  grid-template-columns: 1.7fr 1.05fr;        /* слева большой блок, справа — колонка */
+  grid-template-columns: 1.7fr 1.05fr;    
   gap: 18px;
   align-items: stretch;
 }
@@ -1254,19 +1221,18 @@ overflow: hidden;
   gap: 18px;
 }
 
-/* карточка-изображение */
 .m-item{
   position:relative; display:block; border-radius:10px; overflow:hidden; background:#eef2f5;
     height: 182px;
 }
 
 
-/* пропорции */
+
 .m-big{  
     height: 381px;}
 
 
-/* картинка */
+
 .facility-img{
   border-radius:4px;
   overflow:hidden;
@@ -1274,7 +1240,7 @@ overflow: hidden;
 }
 
 
-/* текст */
+
 .facility-title{
   font-size:24px;
   margin: 20px 0 15px;
@@ -1314,19 +1280,18 @@ overflow: hidden;
 }
 
 
-/* область медиа теперь содержит Swiper */
 .prop-media{ position:relative; background:#eef2f5; aspect-ratio:16/10; overflow:hidden; }
 .prop-media .swiper, .prop-media .swiper-wrapper, .prop-media .swiper-slide{ height:100%; }
 .prop-media .swiper-slide img{ 
   border-radius: 4px;
  }
 
-/* bullets на фото */
+
 .prop-media .swiper-pagination{ bottom:8px !important; }
 .prop-media .swiper-pagination-bullet{ width:6px; height:6px; background:#fff; opacity:.6; }
 .prop-media .swiper-pagination-bullet-active{ opacity:1; }
 
-/* стрелки поверх фото (можно убрать, если не нужны) */
+
 .prop-media .swiper-button-prev,
 .prop-media .swiper-button-next{
   width:28px; height:28px; border-radius:50%; background:rgba(23,58,89,.9);
@@ -1334,7 +1299,6 @@ overflow: hidden;
 .prop-media .swiper-button-prev::after,
 .prop-media .swiper-button-next::after{ font-size:14px; color:#fff; }
 
-/* лента статуса поверх галереи */
 .prop-ribbon{ position:absolute; z-index: 1; left:12px; top:12px; padding:4px 8px; border-radius:4px; color:#fff; font-size:12.48px; font-family: var(--font-sans); }
 .ribbon-gold{ background:#caa24b;  text-transform: uppercase;}
 .ribbon-silver{ background:#E3E0E0; color: #000; text-transform: uppercase;}
@@ -1389,19 +1353,19 @@ overflow: hidden;
 }
 
 
-/* Контейнер категорий */
+
 .faq-accordion .faq-cat {
   border: 0;
   border-bottom: 1px solid #dfe6ec;
   position: relative;
 }
 
-/* Кнопка категории */
+
 .faq-cat-btn {
   background: transparent!important;
   color: #173a59;
   box-shadow: none!important;
-  padding: 16px 56px 16px 16px; /* место под круглую стрелку справа */
+  padding: 16px 56px 16px 16px; 
   font-size: 26px;
   font-weight: 600;
   border-radius: 0;
@@ -1417,7 +1381,6 @@ overflow: hidden;
 }
 
 
-/* Тело открытой категории */
 .faq-first {
   color: #173a59;
 }
@@ -1433,7 +1396,7 @@ overflow: hidden;
   background: rgba(19, 51, 81, 0.05)!important;
 }
 
-/* Общий вид контролов как в макете */
+
 .enquiry-form .form-control,
 .enquiry-form .form-select {
   border: 1px solid #707070;
@@ -1449,13 +1412,12 @@ textarea.form-control {
   height: 232px;
 }
 
-/* Плейсхолдеры */
+
 .enquiry-form ::placeholder {
   color: #133351;
   opacity: 1;
 }
 
-/* Select: иконка-стрелка, позиция справа */
 .enquiry-form .form-select {
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5' stroke='%23173a59' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -1464,13 +1426,13 @@ textarea.form-control {
   padding-right: 40px;
 }
 
-/* Текстовая область */
+
 .enquiry-message {
   min-height: 260px;
   resize: vertical;
 }
 
-/* Кнопка */
+
 .btn-enquiry {
   background: #173a59;
   color: #fff;
@@ -1488,9 +1450,8 @@ textarea.form-control {
 
 
 
-/* ---------- 2) Category + Table ---------- */
 .cookie-cat-title {
-  background: #DBB76E;          /* «золотая» плашка */
+  background: #DBB76E;
   color: #173a59;
   font-weight: 600;
   font-size: 26px;
@@ -1506,7 +1467,6 @@ textarea.form-control {
 padding: 19px;
 }
 
-/* Таблица */
 .cookie-table {
   border-collapse: separate;
   border-spacing: 0;
@@ -1514,7 +1474,7 @@ padding: 19px;
 }
 
 .cookie-table thead th {
-  background: rgba(219, 183, 110, 0.4);          /* светлый оттенок gold для шапки */
+  background: rgba(219, 183, 110, 0.4);  
   color: #133351;
   font-weight: 600;
   font-family: var(--font-sans);
@@ -1524,7 +1484,7 @@ padding: 19px;
 }
 
 .cookie-table tbody td {
-  border-top: 1px solid #DBB76E;  /* тонкие разделители строк */
+  border-top: 1px solid #DBB76E; 
   vertical-align: top;
   font-size: 14px;
   color: #133351;
@@ -1540,13 +1500,12 @@ padding: 19px;
   border-bottom: 1px solid #DBB76E;
 }
 
-/* Скролл на очень узких экранах */
+
 .table-responsive {
   border: 0;
 }
 
 
-/* ====== базовая оболочка ====== */
 .mosaic-carousel {
   background: transparent;
 }
@@ -1562,13 +1521,12 @@ padding: 19px;
   will-change: transform;
 }
 
-/* ширина слайда выставляется скриптом; паддинг для внутренних отступов */
+
 .mc-slide {
   flex: 0 0 100%;
   padding: 12px 6px;
 }
 
-/* ====== мозаика в слайде ====== */
 .mc-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr 1fr;
@@ -1576,33 +1534,33 @@ padding: 19px;
   gap: 22px;
 }
 
-/* расположение плиток */
+
 .area-big {
   grid-column: 1 / 2;
-  grid-row: 1 / 3;     /* большая слева на две строки */
+  grid-row: 1 / 3;   
 }
 
 .area-mid-top {
-  grid-column: 2 / 3;  /* центр, верх */
+  grid-column: 2 / 3; 
   grid-row: 1 / 2;
 }
 
 .area-right-top {
-  grid-column: 3 / 4;  /* справа, верх */
+  grid-column: 3 / 4;  
   grid-row: 1 / 2;
 }
 
 .area-mid-bottom {
-  grid-column: 2 / 3;  /* центр, низ */
+  grid-column: 2 / 3; 
   grid-row: 2 / 3;
 }
 
 .area-right-bottom {
-  grid-column: 3 / 4;  /* справа, низ */
+  grid-column: 3 / 4;  
   grid-row: 2 / 3;
 }
 
-/* ====== карточки ====== */
+
 .mc-tile {
   position: relative;
   display: block;
@@ -1620,7 +1578,6 @@ padding: 19px;
   display: block;
 }
 
-/* затемнение снизу + подпись */
 .mc-tile::after {
   content: "";
   position: absolute;
@@ -1639,12 +1596,11 @@ padding: 19px;
   letter-spacing: .2px;
 }
 
-/* чуть увеличить шрифт у большой карточки */
 .area-big .mc-caption {
   font-size: 32px;
 }
 
-/* ====== стрелки ====== */
+
 .mc-nav {
   position: absolute;
   z-index: 5;
@@ -1670,7 +1626,6 @@ padding: 19px;
 
 .mc-nav:hover { filter: brightness(.92); }
 
-/* ====== full-bleed секция ====== */
 .fullbleed {
   position: relative;
   width: 100vw;
@@ -1678,7 +1633,6 @@ padding: 19px;
   margin-right: calc(50% - 50vw);
 }
 
-/* ====== оболочка и стрелки ====== */
 .hmc{ padding: 24px 0; }
 
 .hmc-nav{
@@ -1700,12 +1654,11 @@ padding: 19px;
 }
 
 
-/* ====== окно и "дорожка" ====== */
 .hmc-viewport{
     overflow: hidden;
     position: relative;
     width: 100%;
-  padding-inline: var(--edge-pad, 16px); /* <-- добавили */
+  padding-inline: var(--edge-pad, 16px); 
   padding-top: 148px;
   padding-bottom: 155px;
 }
@@ -1722,7 +1675,7 @@ padding: 19px;
   user-select: none;
 }
 
-/* ====== карточка по умолчанию ====== */
+
 .hmc-item{
   position: relative;
   flex: 0 0 250px;
@@ -1735,12 +1688,12 @@ padding: 19px;
     height 1500ms ease,
     transform 1500ms ease,
     margin 1500ms ease,
-    opacity 600ms ease;   /* fade */
+    opacity 600ms ease;
   transform-origin: left top;
-  opacity: .9;           /* базове тьмяніння */
+  opacity: .9;    
 }
 
-/* “активні” ролі — повна видимість */
+
 .hmc-item--big,
 .hmc-item--tall,
 .hmc-item--overlay{
@@ -1756,20 +1709,20 @@ padding: 19px;
   transition: opacity 600ms ease;
 }
 
-/* базова прозорість підпису + повна у великої картки */
+
 .hmc-item .hmc-caption{ opacity: .75; }
 .hmc-item--big .hmc-caption{ opacity: 1; }
 
 
-/* общий default порядок — "далеко", а целевым выдадим 1..4 */
+
 .hmc-item{ order: 5; }
-.hmc-order-1 { order: 1; }  /* первый (big) */
-.hmc-order-2 { order: 2; }  /* tall — рядом с первым */
+.hmc-order-1 { order: 1; } 
+.hmc-order-2 { order: 2; } 
 .hmc-order-3 {
   order: 3;
-  margin: 0 105px 0 0;       /* как у тебя */
+  margin: 0 105px 0 0; 
 }
-.hmc-order-4 { order: 4; }  /* overlay — сверху, позже в потоке */
+.hmc-order-4 { order: 4; } 
 
 .hmc-item img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -1795,7 +1748,7 @@ padding: 19px;
     z-index: -1;
 }
 
-/* ====== роли ====== */
+
 .hmc-item--big{
   flex-basis: 500px;
   height: 500px;
@@ -1826,7 +1779,7 @@ padding: 19px;
   transform: none !important;
 }
 
-/* Карта */
+
 #findMapWrap,
 #findMap {
   width: 100%;
@@ -1836,7 +1789,7 @@ padding: 19px;
   overflow: hidden;
 }
 
-/* Стилизация контента InfoWindow (наша карточка) */
+
 .gm-style .map-iw{
   width: 520px;
   max-width: calc(100vw - 40px);
