@@ -176,6 +176,10 @@
   const btnPrev = root.querySelector('.hmc-prev');
   const btnNext = root.querySelector('.hmc-next');
 
+  // ШВИДКОСТІ (узгоджені з CSS)
+  const DUR = 1500;     // для translateX дорожки
+  const FLIP_DUR = 1000; // для FLIP transform
+
   const items = () => Array.from(track.children);
 
   /* gap для точного шага */
@@ -229,43 +233,35 @@
    * options.noFlip: Set<Element> — элементы, для которых НЕ делаем FLIP (вообще без сдвига/масштаба)
    * options.noAnim: Set<Element> — элементы, у которых временно отключаем любые CSS-переходы
    */
-  function applyRolesWithFlip(preRects, options = {}) {
+function applyRolesWithFlip(preRects, options = {}) {
     const { noFlip = new Set(), noAnim = new Set() } = options;
+    
     const els = items();
 
     const firstRects = preRects || snapshotRects(els);
 
-    // применим роли
     applyRoles();
 
-    // элементы, которые будем реально "играть" (ставили transform)
     const toPlay = [];
 
-    // если нужно — полностью отключим переходы у некоторых элементов
-    noAnim.forEach(el => {
-      if (!el) return;
-      el.classList.add('hmc-item--noanim');
-    });
+    // тимчасово обмежуємо лише transform (fade лишається завдяки CSS)
+    noAnim.forEach(el => el && el.classList.add('hmc-item--noanim'));
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       els.forEach(el => {
         const last  = el.getBoundingClientRect();
         const first = firstRects.get(el) || last;
 
-        // для исключённых из FLIP — вообще не трогаем transform
         if (noFlip.has(el)) return;
 
         let dx, dy, sx = 1, sy = 1, origin = 'left top';
 
         if (el.classList.contains('hmc-item--big')) {
-          // Большая: без scale, из центра
           const fcx = first.left + first.width  / 2;
           const fcy = first.top  + first.height / 2;
           const lcx = last.left  + last.width   / 2;
           const lcy = last.top   + last.height  / 2;
-          dx = fcx - lcx;
-          dy = fcy - lcy;
-          origin = 'center center';
+          dx = fcx - lcx; dy = fcy - lcy; origin = 'center center';
         } else {
           dx = first.left - last.left;
           dy = first.top  - last.top;
@@ -279,10 +275,9 @@
         toPlay.push(el);
       });
 
-      // PLAY
       requestAnimationFrame(() => {
         toPlay.forEach(el => {
-          el.style.transition = 'transform 350ms ease';
+          el.style.transition = `transform ${FLIP_DUR}ms ease`;
           el.style.transform  = '';
           el.addEventListener('transitionend', () => {
             el.style.transition      = '';
@@ -293,7 +288,6 @@
       });
     }
 
-    // через 2 rAF вернём анимации
     if (noAnim.size) {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -305,44 +299,33 @@
 
   function forceReflow(){ void track.offsetWidth; }
 
-  /* =============== шаг вперёд =============== */
-  function goNext() {
+ function goNext() {
     const step = firstStep();
     if (!step) return;
 
-    track.style.transition = 'transform 400ms ease';
+    track.style.transition = `transform ${DUR}ms ease`;
     track.style.transform  = `translateX(${-step}px)`;
 
     track.addEventListener('transitionend', function handler() {
       track.removeEventListener('transitionend', handler);
 
-      // 1) стоп дорожки и СНАПШОТ при -step
       track.style.transition = 'none';
       const before = items();
       const pre = snapshotRects(before);
 
-      // этот элемент станет НОВОЙ "первой" (большой) после шага вперёд:
-      const willBeBig = before[1]; // именно он станет arr[0] после appendChild
+      const willBeBig = before[1];
 
-      // 2) откат дорожки и перестановка DOM
       track.style.transform  = 'translateX(0)';
       track.appendChild(before[0]);
 
-      // 3) мягко применяем роли, но для НОВОЙ big: без FLIP и без CSS-анимаций
-      applyRolesWithFlip(pre, {
-        noFlip: new Set([willBeBig]),
-        noAnim: new Set([willBeBig])
-      });
+      applyRolesWithFlip(pre);
 
-      // 4) готовим дорожку к следующему кадру
-      forceReflow();
-      track.style.transition = 'transform 400ms ease';
+      void track.offsetWidth;
+      track.style.transition = `transform ${DUR}ms ease`;
     }, { once:true });
   }
 
-  /* =============== шаг назад =============== */
   function goPrev() {
-    // при листании назад у тебя и так всё ок, но сделаем симметрично и стабильно
     const pre = snapshotRects(items());
 
     const arr  = items();
@@ -352,8 +335,7 @@
     track.style.transition = 'none';
     track.insertBefore(last, arr[0]);
 
-    // при движении назад BIG и так не дёргается, но можно явно отключить FLIP у текущего arr[0]
-    const willBeBig = items()[0]; // он же уже arr[0]
+    const willBeBig = items()[0];
     applyRolesWithFlip(pre, {
       noFlip: new Set([willBeBig]),
       noAnim: new Set([willBeBig])
@@ -361,9 +343,9 @@
 
     const step = firstStep();
     track.style.transform = `translateX(${-step}px)`;
-    forceReflow();
+    void track.offsetWidth;
 
-    track.style.transition = 'transform 400ms ease';
+    track.style.transition = `transform ${DUR}ms ease`;
     track.style.transform  = 'translateX(0)';
   }
 
@@ -398,8 +380,8 @@
 
     // свайп вправо: следующий (вперёд)
     if (deltaX <= -threshold) {
-      track.style.transition = 'transform 400ms ease';
-      track.style.transform  = `translateX(${-limit}px)`;
+  track.style.transition = `transform ${DUR}ms ease`; 
+  track.style.transform  = `translateX(${-limit}px)`;
 
       track.addEventListener('transitionend', function handler(){
         track.removeEventListener('transitionend', handler);
@@ -418,36 +400,36 @@
         });
 
         forceReflow();
-        track.style.transition = 'transform 400ms ease';
+        track.style.transition = `transform ${DUR}ms ease`; ы
       }, { once:true });
 
     // свайп влево: предыдущий (назад)
-    } else if (deltaX >= threshold) {
-      const pre = snapshotRects(items());
-      const arr  = items();
-      const last = arr[arr.length - 1];
+   } else if (deltaX >= threshold) {
+  const pre = snapshotRects(items());
+  const arr  = items();
+  const last = arr[arr.length - 1];
 
-      track.style.transition = 'none';
-      track.insertBefore(last, arr[0]);
+  track.style.transition = 'none';
+  track.insertBefore(last, arr[0]);
 
-      const willBeBig = items()[0];
-      applyRolesWithFlip(pre, {
-        noFlip: new Set([willBeBig]),
-        noAnim: new Set([willBeBig])
-      });
+  const willBeBig = items()[0];
+  applyRolesWithFlip(pre, {
+    noFlip: new Set([willBeBig]),
+    noAnim: new Set([willBeBig])
+  });
 
-      const step = firstStep();
-      track.style.transform = `translateX(${-step}px)`;
-      forceReflow();
+  const step = firstStep();
+  track.style.transform = `translateX(${-step}px)`;
+  forceReflow();
 
-      track.style.transition = 'transform 400ms ease';
-      track.style.transform  = 'translateX(0)';
+  track.style.transition = `transform ${DUR}ms ease`;                 // було 400ms
+  track.style.transform  = 'translateX(0)';
 
-    } else {
-      // вернуть на место
-      track.style.transition = 'transform 400ms ease';
-      track.style.transform = 'translateX(0)';
-    }
+} else {
+  // відкат без зміни позиції
+  track.style.transition = `transform ${DUR}ms ease`;                 // було 400ms
+  track.style.transform  = 'translateX(0)';
+}
   }
 
   track.addEventListener('mousedown', onDown);
@@ -521,12 +503,12 @@
       // вернуться к списку
       wrapMap.classList.add('d-none');
       wrapList.classList.remove('d-none');
-      btnOpen.innerHTML = '<img src="../NEWMANS/img/location.png" alt="">  On the map';
+      btnOpen.innerHTML = '<img src="/NEWMANS/img/location.png" alt="">  On the map';
     } else {
       // показать карту
       wrapList.classList.add('d-none');
       wrapMap.classList.remove('d-none');
-      btnOpen.innerHTML = '<img src="../NEWMANS/img/grid.png" alt=""> List view';
+      btnOpen.innerHTML = '<img src="/NEWMANS/img/grid.png" alt=""> List view';
 
       // инициализируем карты только один раз
       if (!mapLoaded) {
@@ -594,8 +576,8 @@
 
   const PIN_W = 34;                // ширина пина в px
 const PIN_H = 45;                // высота пина в px
-const PIN_URL_DEFAULT = '../NEWMANS/img/pin-blue.png';   // обычный
-const PIN_URL_ACTIVE  = '../NEWMANS/img/pin-gold.png';   // активный (по клику)
+const PIN_URL_DEFAULT = '/NEWMANS/img/pin-blue.png';   // обычный
+const PIN_URL_ACTIVE  = '/NEWMANS/img/pin-gold.png';   // активный (по клику)
 
   // Простая SVG-иконка маркера: активная/обычная
 function markerIcon(active = false){
@@ -615,7 +597,7 @@ function markerIcon(active = false){
 
         <div >
           <div class="find-card__head d-flex align-items-end gap-2 mb-2">
-            <img src="img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
+            <img src="/NEWMANS/img/location.png" alt=""> Budleigh Salterton, Devon EX9 7BX
           </div>
           <h3 class="h5 mb-2">${p.title}</h3>
           <p class="mb-3">
@@ -671,3 +653,83 @@ function markerIcon(active = false){
       document.body.classList.remove('no-scroll');
     }
   });
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const box     = document.getElementById('dateRange');
+  if (!box) return;
+
+  const start   = box.querySelector('.dr-start');
+  const end     = box.querySelector('.dr-end');
+  const display = box.querySelector('.dr-display');
+
+  // Формат даты
+  const fmt = (iso) => {
+    if (!iso) return '';
+    const d = new Date(iso + 'T00:00:00'); // безопасно для iOS
+    return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
+  };
+  const render = () => {
+    if (start.value && end.value) display.value = `${fmt(start.value)} — ${fmt(end.value)}`;
+    else if (start.value)         display.value = `${fmt(start.value)} — …`;
+    else if (end.value)           display.value = `… — ${fmt(end.value)}`;
+    else                          display.value = '';
+  };
+
+  // Открытие нативного пикера (с фолбэком)
+  const openPicker = (el) => { if (el.showPicker) el.showPicker(); else el.focus(); };
+
+  // Фокус-стили
+  box.addEventListener('focusin',  () => box.classList.add('is-focus'));
+  box.addEventListener('focusout', () => box.classList.remove('is-focus'));
+
+  // Клик по красивому полю: открываем нужный пикер
+  const openSmart = () => {
+    if (!start.value || (start.value && end.value)) {
+      // начинаем сначала
+      end.removeAttribute('min');
+      end.style.pointerEvents = 'none';
+      start.style.pointerEvents = 'auto';
+      openPicker(start);
+    } else {
+      // старт уже есть — просим конец
+      end.min = start.value;
+      end.style.pointerEvents = 'auto';
+      start.style.pointerEvents = 'auto';
+      openPicker(end);
+    }
+  };
+  display.addEventListener('click', openSmart);
+  box.addEventListener('click', (e) => {
+    // клик по пустому месту в боксе
+    if (e.target === box) openSmart();
+  });
+
+  // Изменили начало
+  start.addEventListener('change', () => {
+    // если конец раньше старта — сбрасываем конец
+    if (end.value && end.value < start.value) end.value = '';
+    end.min = start.value || '';
+    render();
+
+    // сразу предлагаем выбрать конец
+    if (start.value) {
+      end.style.pointerEvents = 'auto';
+      openPicker(end);
+    } else {
+      end.style.pointerEvents = 'none';
+    }
+  });
+
+  // Изменили конец
+  end.addEventListener('change', () => {
+    // на всякий случай гарантируем min
+    if (start.value && end.value < start.value) end.value = start.value;
+    render();
+  });
+
+  // Если при загрузке уже есть значения (например, после возврата по Back)
+  if (start.value) end.min = start.value;
+  render();
+});

@@ -118,45 +118,50 @@
            <div class="offer-card">
                   <div class="offer-card__title">Find your perfect holiday</div>
 
-                  <form class="offer-form">
+                 <form class="offer-form">
+                  <div class="offer-field">
+                    <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
+                    <select id="location" class="field-control" aria-label="Location / Park">
+                      <option>Location / Park</option>
+                      <option>Park A</option>
+                      <option>Park B</option>
+                      <option>Park C</option>
+                    </select>
+                  </div>
 
+<div class="offer-field offer-field--daterange" id="dateRange">
+  <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
 
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
-                      <select id="location"  aria-label="Location / Park">
-                        <option>Location / Park</option>
-                        <option>Park A</option>
-                        <option>Park B</option>
-                        <option>Park C</option>
-                      </select>
-                    </div>
+  <!-- Отображение: сюда пишем форматированный диапазон -->
+  <input
+    type="text"
+    class="field-control dr-display"
+    placeholder="Enter dates (arrival & departure)"
+    readonly
+  >
 
+  <!-- Нативные поля: отправляются в форму -->
+  <input type="date" class="dr-native dr-start" name="arrival"   aria-label="Arrival date">
+  <input type="date" class="dr-native dr-end"   name="departure" aria-label="Departure date">
+</div>
 
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
-                      <input type="date" class="form-control" aria-label="Arrival date" placeholder="Enter dates (arrival & departure)">
-                    </div>
+                  <div class="offer-field">
+                    <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
+                    <select id="guests" class="field-control" aria-label="Guests">
+                      <option selected>2 adults, 0 children</option>
+                      <option>1 adult</option>
+                      <option>2 adults</option>
+                      <option>2 adults, 1 child</option>
+                      <option>2 adults, 2 children</option>
+                    </select>
+                  </div>
 
+                  <div class="offer-note mt-4 mb-3">
+                    Our normal arrival days are Friday, Saturday and Monday.
+                  </div>
 
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
-                      <select id="guests"  aria-label="Guests">
-                        <option selected>2 adults, 0 children</option>
-                        <option>1 adult</option>
-                        <option>2 adults</option>
-                        <option>2 adults, 1 child</option>
-                        <option>2 adults, 2 children</option>
-                      </select>
-                    </div>
-
-                    <div class="offer-note mt-4 mb-3">
-                      Our normal arrival days are Friday, Saturday and Monday.
-                    </div>
-
-                    <button type="submit" class="btn w-100">
-                      Check availability
-                    </button>
-                  </form>
+                  <button type="submit" class="btn w-100">Check availability</button>
+                </form>
             </div>
         </div>
        
@@ -432,8 +437,6 @@
   </div>
 
   <div class="hmc-container d-none d-lg-block px-0">
-
-    
     <div class="row">
       <div class="col-12">
           <div class="hmc-viewport">
