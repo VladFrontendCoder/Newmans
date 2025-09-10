@@ -132,15 +132,13 @@
 <div class="offer-field offer-field--daterange" id="dateRange">
   <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
 
-  <!-- Отображение: сюда пишем форматированный диапазон -->
-  <input
-    type="text"
-    class="field-control dr-display"
-    placeholder="Enter dates (arrival & departure)"
-    readonly
-  >
+  <!-- Видимое поле -->
+  <input type="text"
+         class="field-control dr-display"
+         placeholder="Enter dates (arrival & departure)"
+         readonly>
 
-  <!-- Нативные поля: отправляются в форму -->
+  <!-- Нативные поля (отправятся в форму) -->
   <input type="date" class="dr-native dr-start" name="arrival"   aria-label="Arrival date">
   <input type="date" class="dr-native dr-end"   name="departure" aria-label="Departure date">
 </div>

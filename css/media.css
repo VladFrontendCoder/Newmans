@@ -398,6 +398,7 @@ transform: translateX(-50%);
 
 .gm-style .map-iw {
   width: 305px;
+      grid-template-columns: 1fr;
 }
 
 .gm-style .map-iw__img {

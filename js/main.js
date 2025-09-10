@@ -666,9 +666,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const fmt = (iso) => {
     if (!iso) return '';
-    const d = new Date(iso + 'T00:00:00');
+    const d = new Date(iso + 'T00:00:00'); // безопасно для iOS
     return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
   };
+
   const render = () => {
     if (start.value && end.value) display.value = `${fmt(start.value)} — ${fmt(end.value)}`;
     else if (start.value)         display.value = `${fmt(start.value)} — …`;
@@ -676,53 +677,49 @@ document.addEventListener('DOMContentLoaded', () => {
     else                          display.value = '';
   };
 
-  // Открытие: Chrome → showPicker, Safari → реальный click()
-  const openPicker = (el) => {
-    if (typeof el.showPicker === 'function') { el.showPicker(); return; }
-    // click() должен вызываться внутри обработчика пользовательского события (он тут внутри)
-    el.click();
-  };
-
-  // Фокус-стиль
+  // Лёгкий визуальный фокус
   box.addEventListener('focusin',  () => box.classList.add('is-focus'));
   box.addEventListener('focusout', () => box.classList.remove('is-focus'));
 
-  // Смарт-открытие по клику на любое место поля
+  // Тап по полю → открыть нужный пикер (start, потом end)
+  const openStart = () => {
+    end.style.pointerEvents   = 'none';
+    start.style.pointerEvents = 'auto';
+    // на iOS нужно реальное взаимодействие — .click() внутри обработчика работает
+    if (start.showPicker) start.showPicker(); else start.click();
+  };
+  const openEnd = () => {
+    end.min = start.value || '';
+    end.style.pointerEvents   = 'auto';
+    start.style.pointerEvents = 'auto';
+    if (end.showPicker) end.showPicker(); else end.click();
+  };
+
   const openSmart = () => {
     if (!start.value || (start.value && end.value)) {
-      end.removeAttribute('min');
-      end.style.pointerEvents = 'none';
-      start.style.pointerEvents = 'auto';
-      openPicker(start);
+      // начинаем сначала
+      end.value = '';
+      openStart();
     } else {
-      end.min = start.value;
-      end.style.pointerEvents = 'auto';
-      openPicker(end);
+      openEnd();
     }
   };
+
+  // Клик по видимому полю и по пустому месту обёртки
   display.addEventListener('click', openSmart);
   box.addEventListener('click', (e) => { if (e.target === box) openSmart(); });
 
-  // Изменили начало → сразу предлагаем конец
+  // Выбрали начало → сразу просим конец
   start.addEventListener('change', () => {
     if (end.value && end.value < start.value) end.value = '';
-    end.min = start.value || '';
     render();
-    if (start.value) {
-      end.style.pointerEvents = 'auto';
-      openPicker(end); // сразу открыть выбор конца
-    } else {
-      end.style.pointerEvents = 'none';
-    }
+    if (start.value) openEnd();
   });
 
-  // Изменили конец
-  end.addEventListener('change', () => {
-    if (start.value && end.value < start.value) end.value = start.value;
-    render();
-  });
+  // Выбрали конец → просто перерисовать
+  end.addEventListener('change', render);
 
-  // Если при загрузке уже были значения
+  // Если были значения при загрузке (возврат по Back)
   if (start.value) end.min = start.value;
   render();
 });
