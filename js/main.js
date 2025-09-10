@@ -656,70 +656,33 @@ function markerIcon(active = false){
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const box     = document.getElementById('dateRange');
-  if (!box) return;
+  document.addEventListener('DOMContentLoaded', () => {
+  const field = document.querySelector('.offer-field--date');
+  if (!field) return;
 
-  const start   = box.querySelector('.dr-start');
-  const end     = box.querySelector('.dr-end');
-  const display = box.querySelector('.dr-display');
+  const native  = field.querySelector('.date-native');
+  const display = field.querySelector('.date-display');
 
-  const fmt = (iso) => {
-    if (!iso) return '';
-    const d = new Date(iso + 'T00:00:00'); // безопасно для iOS
+  // форматируем yyyy-mm-dd -> 24 Jun 2025 (поменяй локаль/формат под задачу)
+  const fmt = v => {
+    const d = new Date(v + 'T00:00:00');
     return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
   };
 
-  const render = () => {
-    if (start.value && end.value) display.value = `${fmt(start.value)} — ${fmt(end.value)}`;
-    else if (start.value)         display.value = `${fmt(start.value)} — …`;
-    else if (end.value)           display.value = `… — ${fmt(end.value)}`;
-    else                          display.value = '';
-  };
-
-  // Лёгкий визуальный фокус
-  box.addEventListener('focusin',  () => box.classList.add('is-focus'));
-  box.addEventListener('focusout', () => box.classList.remove('is-focus'));
-
-  // Тап по полю → открыть нужный пикер (start, потом end)
-  const openStart = () => {
-    end.style.pointerEvents   = 'none';
-    start.style.pointerEvents = 'auto';
-    // на iOS нужно реальное взаимодействие — .click() внутри обработчика работает
-    if (start.showPicker) start.showPicker(); else start.click();
-  };
-  const openEnd = () => {
-    end.min = start.value || '';
-    end.style.pointerEvents   = 'auto';
-    start.style.pointerEvents = 'auto';
-    if (end.showPicker) end.showPicker(); else end.click();
-  };
-
-  const openSmart = () => {
-    if (!start.value || (start.value && end.value)) {
-      // начинаем сначала
-      end.value = '';
-      openStart();
-    } else {
-      openEnd();
-    }
-  };
-
-  // Клик по видимому полю и по пустому месту обёртки
-  display.addEventListener('click', openSmart);
-  box.addEventListener('click', (e) => { if (e.target === box) openSmart(); });
-
-  // Выбрали начало → сразу просим конец
-  start.addEventListener('change', () => {
-    if (end.value && end.value < start.value) end.value = '';
-    render();
-    if (start.value) openEnd();
+  // при выборе даты — показать её в «красивом» инпуте
+  native.addEventListener('change', () => {
+    display.value = native.value ? fmt(native.value) : '';
   });
 
-  // Выбрали конец → просто перерисовать
-  end.addEventListener('change', render);
+  // клик по красивому инпуту — открыть системный пикер (если поддерживается)
+  display.addEventListener('click', () => {
+    if (native.showPicker) native.showPicker(); else native.focus();
+  });
 
-  // Если были значения при загрузке (возврат по Back)
-  if (start.value) end.min = start.value;
-  render();
+  // на всякий случай — клик по всей обёртке тоже откроет пикер
+  field.addEventListener('click', (e) => {
+    if (e.target === field) {
+      if (native.showPicker) native.showPicker(); else native.focus();
+    }
+  });
 });

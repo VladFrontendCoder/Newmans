@@ -10,7 +10,7 @@
 
      <link href="css/media.css" rel="stylesheet" />
 
-    <title>Newmans</title>
+    <title>NEWMANS</title>
   </head>
 <body>
 
@@ -55,7 +55,7 @@
               <ul class=" d-flex gap-4 justify-content-between">
                 <li><a href="/Newmans" class="header-bottom__link active">HOME</a></li>
                 <li><a href="/Newmans/park.html" class="header-bottom__link">PARKS</a></li>
-                <li><a href="/Newmans/subletting.html" class="header-bottom__link">SUBLETTING WITH Newmans</a></li>
+                <li><a href="/Newmans/subletting.html" class="header-bottom__link">SUBLETTING WITH NEWMANS</a></li>
                 <li><a href="/Newmans/park_a_list.html" class="header-bottom__link">SPECIAL OFFERS</a></li>
                 <li><a href="/Newmans/faq.html" class="header-bottom__link">Faqs</a></li>
               </ul>
@@ -129,19 +129,20 @@
                     </select>
                   </div>
 
-<div class="offer-field offer-field--daterange" id="dateRange">
-  <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
+                <div class="offer-field offer-field--date">
+                  <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
+                  <!-- «красивый» инпут: только отображение -->
+                  <input type="text"
+                        class="field-control date-display"
+                        placeholder="Enter dates"
+                        readonly>
 
-  <!-- Видимое поле -->
-  <input type="text"
-         class="field-control dr-display"
-         placeholder="Enter dates (arrival & departure)"
-         readonly>
-
-  <!-- Нативные поля (отправятся в форму) -->
-  <input type="date" class="dr-native dr-start" name="arrival"   aria-label="Arrival date">
-  <input type="date" class="dr-native dr-end"   name="departure" aria-label="Departure date">
-</div>
+                  <!-- нативный инпут: отправляется в форму -->
+                  <input type="date"
+                        class="date-native"
+                        name="arrival"
+                        aria-label="Arrival date">
+                </div>
 
                   <div class="offer-field">
                     <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
@@ -1088,7 +1089,7 @@
     <ul class="modalMenu__list">
         <li><a href="/Newmans">HOME</a></li>
         <li><a href="/Newmans/park.html">PARKS</a></li>
-        <li><a href="/Newmans/subletting.html">SUBLETTING WITH Newmans</a></li>
+        <li><a href="/Newmans/subletting.html">SUBLETTING WITH NEWMANS</a></li>
         <li><a href="/Newmans/park_a_list.html">SPECIAL OFFERS</a></li>
         <li><a href="/Newmans/faq.html">Faqs</a></li>
     </ul>
