@@ -396,6 +396,18 @@ transform: translateX(-50%);
   font-size: 14px;
 }
 
+.gm-style .map-iw {
+  width: 305px;
+}
+
+.gm-style .map-iw__img {
+    width: 100%;
+}
+
+#findMapWrap, #findMap {
+  height: auto;
+  min-height: 585px;
+}
 
 }
 

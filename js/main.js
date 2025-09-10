@@ -656,7 +656,7 @@ function markerIcon(active = false){
 
 
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const box     = document.getElementById('dateRange');
   if (!box) return;
 
@@ -664,10 +664,9 @@ function markerIcon(active = false){
   const end     = box.querySelector('.dr-end');
   const display = box.querySelector('.dr-display');
 
-  // Формат даты
   const fmt = (iso) => {
     if (!iso) return '';
-    const d = new Date(iso + 'T00:00:00'); // безопасно для iOS
+    const d = new Date(iso + 'T00:00:00');
     return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
   };
   const render = () => {
@@ -677,46 +676,41 @@ function markerIcon(active = false){
     else                          display.value = '';
   };
 
-  // Открытие нативного пикера (с фолбэком)
-  const openPicker = (el) => { if (el.showPicker) el.showPicker(); else el.focus(); };
+  // Открытие: Chrome → showPicker, Safari → реальный click()
+  const openPicker = (el) => {
+    if (typeof el.showPicker === 'function') { el.showPicker(); return; }
+    // click() должен вызываться внутри обработчика пользовательского события (он тут внутри)
+    el.click();
+  };
 
-  // Фокус-стили
+  // Фокус-стиль
   box.addEventListener('focusin',  () => box.classList.add('is-focus'));
   box.addEventListener('focusout', () => box.classList.remove('is-focus'));
 
-  // Клик по красивому полю: открываем нужный пикер
+  // Смарт-открытие по клику на любое место поля
   const openSmart = () => {
     if (!start.value || (start.value && end.value)) {
-      // начинаем сначала
       end.removeAttribute('min');
       end.style.pointerEvents = 'none';
       start.style.pointerEvents = 'auto';
       openPicker(start);
     } else {
-      // старт уже есть — просим конец
       end.min = start.value;
       end.style.pointerEvents = 'auto';
-      start.style.pointerEvents = 'auto';
       openPicker(end);
     }
   };
   display.addEventListener('click', openSmart);
-  box.addEventListener('click', (e) => {
-    // клик по пустому месту в боксе
-    if (e.target === box) openSmart();
-  });
+  box.addEventListener('click', (e) => { if (e.target === box) openSmart(); });
 
-  // Изменили начало
+  // Изменили начало → сразу предлагаем конец
   start.addEventListener('change', () => {
-    // если конец раньше старта — сбрасываем конец
     if (end.value && end.value < start.value) end.value = '';
     end.min = start.value || '';
     render();
-
-    // сразу предлагаем выбрать конец
     if (start.value) {
       end.style.pointerEvents = 'auto';
-      openPicker(end);
+      openPicker(end); // сразу открыть выбор конца
     } else {
       end.style.pointerEvents = 'none';
     }
@@ -724,12 +718,11 @@ function markerIcon(active = false){
 
   // Изменили конец
   end.addEventListener('change', () => {
-    // на всякий случай гарантируем min
     if (start.value && end.value < start.value) end.value = start.value;
     render();
   });
 
-  // Если при загрузке уже есть значения (например, после возврата по Back)
+  // Если при загрузке уже были значения
   if (start.value) end.min = start.value;
   render();
 });
