@@ -115,45 +115,49 @@
             <div class="offer-card__subtitle d-none d-lg-block">Unity Beach, Brean Sands</div>
                   <div class="offer-card__title">Find your perfect holiday</div>
 
-                  <form class="offer-form">
+   <form class="offer-form">
+                  <div class="offer-field">
+                    <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
+                    <select id="location" class="field-control" aria-label="Location / Park">
+                      <option>Location / Park</option>
+                      <option>Park A</option>
+                      <option>Park B</option>
+                      <option>Park C</option>
+                    </select>
+                  </div>
 
+                <div class="offer-field offer-field--date">
+                  <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
+                  <!-- «красивый» инпут: только отображение -->
+                  <input type="text"
+                        class="field-control date-display"
+                        placeholder="Enter dates"
+                        readonly>
 
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
-                      <select id="location"  aria-label="Location / Park">
-                        <option>Location / Park</option>
-                        <option>Park A</option>
-                        <option>Park B</option>
-                        <option>Park C</option>
-                      </select>
-                    </div>
+                  <!-- нативный инпут: отправляется в форму -->
+                  <input type="date"
+                        class="date-native"
+                        name="arrival"
+                        aria-label="Arrival date">
+                </div>
 
+                  <div class="offer-field">
+                    <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
+                    <select id="guests" class="field-control" aria-label="Guests">
+                      <option selected>2 adults, 0 children</option>
+                      <option>1 adult</option>
+                      <option>2 adults</option>
+                      <option>2 adults, 1 child</option>
+                      <option>2 adults, 2 children</option>
+                    </select>
+                  </div>
 
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
-                      <input type="date" class="form-control" aria-label="Arrival date" placeholder="Enter dates (arrival & departure)">
-                    </div>
+                  <div class="offer-note mt-4 mb-3">
+                    Our normal arrival days are Friday, Saturday and Monday.
+                  </div>
 
-
-                    <div class="offer-field">
-                      <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
-                      <select id="guests"  aria-label="Guests">
-                        <option selected>2 adults, 0 children</option>
-                        <option>1 adult</option>
-                        <option>2 adults</option>
-                        <option>2 adults, 1 child</option>
-                        <option>2 adults, 2 children</option>
-                      </select>
-                    </div>
-
-                    <div class="offer-note mt-4 mb-3">
-                      Our normal arrival days are Friday, Saturday and Monday.
-                    </div>
-
-                    <button type="submit" class="btn w-100">
-                      Check availability
-                    </button>
-                  </form>
+                  <button type="submit" class="btn w-100">Check availability</button>
+                </form>
             </div>
         </div>
        
