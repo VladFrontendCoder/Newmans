@@ -512,38 +512,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.enquiry-form');
   if (!form) return;
 
-
   form.setAttribute('novalidate', '');
+
+  const q = (sel) => form.querySelector(sel);
+  const phone = q('#phone');
+
+  if (phone) {
+    const maxLen = 15;
+    const digitsOnly = v => v.replace(/\D+/g, '');
+
+    phone.addEventListener('input', () => {
+      const clean = digitsOnly(phone.value).slice(0, maxLen);
+      if (phone.value !== clean) phone.value = clean;
+      if (phone.hasAttribute('required')) validateField(phone);
+    });
+
+    phone.addEventListener('keydown', (e) => {
+      const ctrl = e.ctrlKey || e.metaKey;
+      const allowed =
+        ['Backspace','Delete','Tab','Escape','Enter','ArrowLeft','ArrowRight','Home','End'].includes(e.key) || ctrl;
+      if (allowed) return;
+      if (!/^\d$/.test(e.key)) e.preventDefault();
+    });
+  }
 
 
   const requiredControls = () =>
     Array.from(form.querySelectorAll('input[required], select[required], textarea[required]'));
 
+  function mark(el, invalid) {
+    el.classList.toggle('is-invalid', invalid);
+    el.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+  }
 
-  function validateField(el){
-    let valid;
+  function validateField(el) {
+    if (!el.hasAttribute('required')) return true; 
+
+    let valid = true;
+
     if (el.tagName === 'SELECT') {
-      valid = el.value.trim() !== '';
+
+      valid = el.value.trim() !== '' && el.selectedIndex > 0;
+    } else if (el.id === 'phone') {
+      const digits = (el.value || '').replace(/\D+/g, '');
+      valid = digits.length >= 7 && digits.length <= 15; 
     } else {
-      valid = el.checkValidity();
+      valid = el.checkValidity() && (el.value || '').trim().length > 0;
     }
-    el.classList.toggle('is-invalid', !valid);
-    el.setAttribute('aria-invalid', valid ? 'false' : 'true');
+
+    mark(el, !valid);
     return valid;
   }
 
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const controls = requiredControls();
     let firstInvalid = null;
     let allValid = true;
 
     controls.forEach(el => {
-      const ok = validateField(el);
-      if (!ok && !firstInvalid) firstInvalid = el;
-      allValid = allValid && ok;
+      if (!validateField(el)) {
+        if (!firstInvalid) firstInvalid = el;
+        allValid = false;
+      }
     });
 
     if (!allValid) {
@@ -551,8 +583,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+  
     form.reset();
-    controls.forEach(el => el.classList.remove('is-invalid'));
+    controls.forEach(el => mark(el, false));
     alert('✅ Form is valid (demo).');
   });
 
