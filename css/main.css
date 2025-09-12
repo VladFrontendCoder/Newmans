@@ -1396,6 +1396,10 @@ overflow: hidden;
   background: rgba(19, 51, 81, 0.05)!important;
 }
 
+.enquiry-form .is-invalid {
+  border-color: #dc3545!important;
+}
+
 
 .enquiry-form .form-control,
 .enquiry-form .form-select {
@@ -1675,24 +1679,15 @@ padding: 19px;
   user-select: none;
 }
 
-
-.hmc-item{
+.hmc-item { 
   position: relative;
   flex: 0 0 250px;
   height: 250px;
   border-radius: 4px;
   overflow: hidden;
   background: #e9eef4;
-  transition:
-    flex-basis 1500ms ease,
-    height 1500ms ease,
-    transform 1500ms ease,
-    margin 1500ms ease,
-    opacity 600ms ease;
-  transform-origin: left top;
   opacity: .9;    
 }
-
 
 .hmc-item--big,
 .hmc-item--tall,
@@ -1779,6 +1774,20 @@ padding: 19px;
   transform: none !important;
 }
 
+.hmc-viewport { position: relative; } /* у тебе вже так, але нагадаю */
+.hmc-ghost {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;   /* щоб не миготіли скроллбари */
+}
+
+/* Плавне згасання/проявлення картки під час безкінечної прокрутки */
+.hmc-item.hmc-fade {
+  transition: opacity 280ms ease;
+  will-change: opacity;
+}
 
 #findMapWrap,
 #findMap {

@@ -168,268 +168,115 @@
 })();
 
 (function () {
-  const root  = document.querySelector('.hmc');
+  const root = document.querySelector('.hmc');
   if (!root) return;
 
-  const track   = root.querySelector('.hmc-track');
-  const btnPrev = root.querySelector('.hmc-prev');
-  const btnNext = root.querySelector('.hmc-next');
+  const viewport = root.querySelector('.hmc-viewport');
+  const track    = root.querySelector('.hmc-track');
+  const btnPrev  = root.querySelector('.hmc-prev');
+  const btnNext  = root.querySelector('.hmc-next');
 
- 
-  const DUR = 1500;    
-  const FLIP_DUR = 1000; 
+  const SPECIAL = [
+    'hmc-item--big','hmc-item--tall','hmc-item--overlay',
+    'hmc-order-1','hmc-order-2','hmc-order-3','hmc-order-4','hmc-item--noanim'
+  ];
+
+  let flattened = false;
+  let busy = false;
 
   const items = () => Array.from(track.children);
 
-  
-  function getGap() {
+  // без згладжування: просто зняти класи один раз
+  function stripOnce() {
+    if (flattened) return;
+    flattened = true;
+    items().forEach(el => SPECIAL.forEach(c => el.classList.remove(c)));
+    root.classList.add('hmc--flat');
+  }
+
+  function gap() {
     const cs = getComputedStyle(track);
-    const g  = parseFloat(cs.columnGap || cs.gap || '0');
-    return isNaN(g) ? 0 : g;
+    return parseFloat(cs.gap || cs.columnGap || '0') || 0;
+  }
+  function step() {
+    const first = track.querySelector('.hmc-item');
+    return first ? first.getBoundingClientRect().width + gap() : 0;
   }
 
-
-  function firstStep() {
-    const arr = items();
-    if (!arr.length) return 0;
-    const w = arr[0].getBoundingClientRect().width;
-    return w + getGap();
-  }
-
-  
-  function applyRoles() {
-    const arr = items();
-    arr.forEach(el => {
-      el.classList.remove(
-        'hmc-item--big','hmc-item--tall','hmc-item--overlay',
-        'hmc-order-1','hmc-order-2','hmc-order-3','hmc-order-4'
-      );
-      el.style.order = '';
+  function waitForScroll(targetLeft, timeout = 900) {
+    return new Promise(resolve => {
+      const start = performance.now();
+      (function tick(now) {
+        if (Math.abs(viewport.scrollLeft - targetLeft) < 1 || (now - start) > timeout) resolve();
+        else requestAnimationFrame(tick);
+      })(start);
     });
-
-    if (arr[0]) arr[0].classList.add('hmc-item--big','hmc-order-1');
-    if (arr[1]) arr[1].classList.add('hmc-item--overlay','hmc-order-4');
-    if (arr[2]) arr[2].classList.add('hmc-item--tall','hmc-order-2');
-    if (arr[3]) arr[3].classList.add('hmc-order-3');
-
   }
 
+  // NEXT: fade-out першої, скрол, перестановка, компенсація
+  async function goNext() {
+    if (busy) return;
+    busy = true;
 
-  function snapshotRects(list) {
-    const map = new Map();
-    list.forEach(el => map.set(el, el.getBoundingClientRect()));
-    return map;
-  }
+    if (!flattened) stripOnce();
 
+    const s = step();
+    if (!s) { busy = false; return; }
 
-function applyRolesWithFlip(preRects, options = {}) {
-    const { noFlip = new Set(), noAnim = new Set() } = options;
-    
-    const els = items();
-
-    const firstRects = preRects || snapshotRects(els);
-
-    applyRoles();
-
-    const toPlay = [];
-
-
-    noAnim.forEach(el => el && el.classList.add('hmc-item--noanim'));
-
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      els.forEach(el => {
-        const last  = el.getBoundingClientRect();
-        const first = firstRects.get(el) || last;
-
-        if (noFlip.has(el)) return;
-
-        let dx, dy, sx = 1, sy = 1, origin = 'left top';
-
-        if (el.classList.contains('hmc-item--big')) {
-          const fcx = first.left + first.width  / 2;
-          const fcy = first.top  + first.height / 2;
-          const lcx = last.left  + last.width   / 2;
-          const lcy = last.top   + last.height  / 2;
-          dx = fcx - lcx; dy = fcy - lcy; origin = 'center center';
-        } else {
-          dx = first.left - last.left;
-          dy = first.top  - last.top;
-          sx = first.width  / last.width;
-          sy = first.height / last.height;
-        }
-
-        el.style.transformOrigin = origin;
-        el.style.willChange      = 'transform';
-        el.style.transform       = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
-        toPlay.push(el);
-      });
-
-      requestAnimationFrame(() => {
-        toPlay.forEach(el => {
-          el.style.transition = `transform ${FLIP_DUR}ms ease`;
-          el.style.transform  = '';
-          el.addEventListener('transitionend', () => {
-            el.style.transition      = '';
-            el.style.willChange      = '';
-            el.style.transformOrigin = '';
-          }, { once: true });
-        });
-      });
+    const first = track.firstElementChild;
+    if (first) {
+      first.classList.add('hmc-fade');
+      first.style.opacity = '0';
     }
 
-    if (noAnim.size) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          noAnim.forEach(el => el && el.classList.remove('hmc-item--noanim'));
-        });
-      });
+    const target = viewport.scrollLeft + s;
+    viewport.scrollBy({ left: s, behavior: 'smooth' });
+    await waitForScroll(target);
+
+    if (first) {
+      track.appendChild(first);
+      viewport.scrollLeft -= s;
+      first.classList.remove('hmc-fade');
+      first.style.opacity = '';
     }
+
+    busy = false;
   }
 
-  function forceReflow(){ void track.offsetWidth; }
+  // PREV: переставляємо останній уперед з opacity:0, компенсуємо scrollLeft, скролимо назад і проявляємо
+  async function goPrev() {
+    if (busy) return;
+    busy = true;
 
- function goNext() {
-    const step = firstStep();
-    if (!step) return;
+    if (!flattened) stripOnce();
 
-    track.style.transition = `transform ${DUR}ms ease`;
-    track.style.transform  = `translateX(${-step}px)`;
+    const s = step();
+    if (!s) { busy = false; return; }
 
-    track.addEventListener('transitionend', function handler() {
-      track.removeEventListener('transitionend', handler);
+    const last = track.lastElementChild;
+    if (last) {
+      last.classList.add('hmc-fade');
+      last.style.opacity = '0';
+      track.insertBefore(last, track.firstElementChild);
+      viewport.scrollLeft += s;
+    }
 
-      track.style.transition = 'none';
-      const before = items();
-      const pre = snapshotRects(before);
+    const target = viewport.scrollLeft - s;
+    viewport.scrollBy({ left: -s, behavior: 'smooth' });
+    requestAnimationFrame(() => { if (last) last.style.opacity = '1'; });
 
-      const willBeBig = before[1];
+    await waitForScroll(target);
 
-      track.style.transform  = 'translateX(0)';
-      track.appendChild(before[0]);
+    if (last) {
+      last.classList.remove('hmc-fade');
+      last.style.opacity = '';
+    }
 
-      applyRolesWithFlip(pre);
-
-      void track.offsetWidth;
-      track.style.transition = `transform ${DUR}ms ease`;
-    }, { once:true });
+    busy = false;
   }
 
-  function goPrev() {
-    const pre = snapshotRects(items());
-
-    const arr  = items();
-    const last = arr[arr.length - 1];
-    if (!last) return;
-
-    track.style.transition = 'none';
-    track.insertBefore(last, arr[0]);
-
-    const willBeBig = items()[0];
-    applyRolesWithFlip(pre, {
-      noFlip: new Set([willBeBig]),
-      noAnim: new Set([willBeBig])
-    });
-
-    const step = firstStep();
-    track.style.transform = `translateX(${-step}px)`;
-    void track.offsetWidth;
-
-    track.style.transition = `transform ${DUR}ms ease`;
-    track.style.transform  = 'translateX(0)';
-  }
-
-  btnNext.addEventListener('click', goNext);
-  btnPrev.addEventListener('click', goPrev);
-
-  /* =============== drag / swipe =============== */
-  let dragging = false, startX = 0, deltaX = 0;
-
-  function onDown(e){
-    dragging = true;
-    startX = e.touches ? e.touches[0].clientX : e.clientX;
-    deltaX = 0;
-    track.classList.add('is-dragging');
-    track.style.transition = 'none';
-  }
-  function onMove(e){
-    if(!dragging) return;
-    const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const dx = x - startX;
-    const limit = firstStep();
-    deltaX = Math.max(-limit, Math.min(limit, dx));
-    track.style.transform = `translateX(${deltaX}px)`;
-  }
-  function onUp(){
-    if(!dragging) return;
-    dragging = false;
-    track.classList.remove('is-dragging');
-
-    const limit = firstStep();
-    const threshold = limit * 0.33;
-
-    if (deltaX <= -threshold) {
-  track.style.transition = `transform ${DUR}ms ease`; 
-  track.style.transform  = `translateX(${-limit}px)`;
-
-      track.addEventListener('transitionend', function handler(){
-        track.removeEventListener('transitionend', handler);
-
-        track.style.transition = 'none';
-        const before = items();
-        const pre = snapshotRects(before);
-        const willBeBig = before[1]; 
-
-        track.style.transform  = 'translateX(0)';
-        track.appendChild(before[0]);
-
-        applyRolesWithFlip(pre, {
-          noFlip: new Set([willBeBig]),
-          noAnim: new Set([willBeBig])
-        });
-
-        forceReflow();
-        track.style.transition = `transform ${DUR}ms ease`; ы
-      }, { once:true });
-
- 
-   } else if (deltaX >= threshold) {
-  const pre = snapshotRects(items());
-  const arr  = items();
-  const last = arr[arr.length - 1];
-
-  track.style.transition = 'none';
-  track.insertBefore(last, arr[0]);
-
-  const willBeBig = items()[0];
-  applyRolesWithFlip(pre, {
-    noFlip: new Set([willBeBig]),
-    noAnim: new Set([willBeBig])
-  });
-
-  const step = firstStep();
-  track.style.transform = `translateX(${-step}px)`;
-  forceReflow();
-
-  track.style.transition = `transform ${DUR}ms ease`;                
-  track.style.transform  = 'translateX(0)';
-
-} else {
-
-  track.style.transition = `transform ${DUR}ms ease`;
-  track.style.transform  = 'translateX(0)';
-}
-  }
-
-  track.addEventListener('mousedown', onDown);
-  window.addEventListener('mousemove', onMove, { passive:false });
-  window.addEventListener('mouseup', onUp);
-
-  track.addEventListener('touchstart', onDown, { passive:true });
-  window.addEventListener('touchmove', onMove, { passive:false });
-  window.addEventListener('touchend', onUp);
-
-
-  applyRoles();
+  btnNext?.addEventListener('click', goNext);
+  btnPrev?.addEventListener('click', goPrev);
 })();
 
 
@@ -658,4 +505,63 @@ field.addEventListener('click', (e) => {
     if (native.showPicker) native.showPicker(); else native.click();
   }
 });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.enquiry-form');
+  if (!form) return;
+
+
+  form.setAttribute('novalidate', '');
+
+
+  const requiredControls = () =>
+    Array.from(form.querySelectorAll('input[required], select[required], textarea[required]'));
+
+
+  function validateField(el){
+    let valid;
+    if (el.tagName === 'SELECT') {
+      valid = el.value.trim() !== '';
+    } else {
+      valid = el.checkValidity();
+    }
+    el.classList.toggle('is-invalid', !valid);
+    el.setAttribute('aria-invalid', valid ? 'false' : 'true');
+    return valid;
+  }
+
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const controls = requiredControls();
+    let firstInvalid = null;
+    let allValid = true;
+
+    controls.forEach(el => {
+      const ok = validateField(el);
+      if (!ok && !firstInvalid) firstInvalid = el;
+      allValid = allValid && ok;
+    });
+
+    if (!allValid) {
+      firstInvalid?.focus();
+      return;
+    }
+
+    form.reset();
+    controls.forEach(el => el.classList.remove('is-invalid'));
+    alert('✅ Form is valid (demo).');
+  });
+
+  form.addEventListener('input', (e) => {
+    const el = e.target;
+    if (el.matches('input[required], textarea[required]')) validateField(el);
+  });
+  form.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el.matches('select[required]')) validateField(el);
+  });
 });
