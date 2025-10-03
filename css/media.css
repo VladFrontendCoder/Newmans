@@ -38,6 +38,35 @@
 	#edge-gallery {
 		overflow: hidden;
 	}
+
+
+  .stepsbar__item {
+      padding: 0 30px;
+  }
+  .tabs__bar {
+    overflow: auto;
+    height: 130px;
+  }
+
+  .result-grid {
+    grid-template-columns: 260px 291px 1fr 1fr 1fr;
+    align-items: start;
+    padding: 40px 0 20px;
+}
+
+.result__swiper {
+    height: 400px;
+}
+
+.result__badge {
+  font-size: 12px;
+}
+
+.extra {
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+}
+
 }
 
 @media screen and (max-width: 992px) {
@@ -210,6 +239,65 @@ height: 12px;
 
 .modalMenu.is-open{ display:block; }
 
+    .result-grid {
+       display: block;
+    }
+
+
+    .result-grid__slot {
+    border-left: none;
+    padding: 20px 0;
+    border-bottom: 1px solid #DBB76E;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
+}
+
+.result-grid__slot > div > div:not(.result__slot-len) {
+  display: inline-block;
+}
+
+.result-grid__info {
+    padding-left: 0;
+}
+
+.result-grid__slot button {
+  min-width: 100px;
+  margin-top: 0;
+}
+
+    .stepsbar__item {
+        padding: 0 10px;
+    }
+
+    .heading {
+      padding: 25px 0 30px;
+  }
+
+  .heading__title {
+      font-size: 45px;
+  }
+
+  .tabs{
+     position: relative;
+  }
+
+  .tabs::before {
+    content:  "";
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    height: 35px;
+  }
+
+  .result-grid__slot:last-child {
+ border-bottom: none;
+}
+
 }
 
 @media screen and (max-width: 768px) {
@@ -233,9 +321,9 @@ height: 12px;
 
   .find h3 { font-size: 21.6px; }
 
-.find-card__btn a:last-child {
-    max-width: 67%;
-}
+  .find-card__btn a:last-child {
+      max-width: 67%;
+  }
 
 .find__btnFilter {
 	font-size: 0;
@@ -408,6 +496,186 @@ transform: translateX(-50%);
 #findMapWrap, #findMap {
   height: auto;
   min-height: 585px;
+}
+
+.stepsbar__txt {
+  display: none;
+}
+
+.booking-form {
+    padding: 20px 0;
+}
+
+.booking-form form {
+    grid-template-columns: 1fr;
+}
+
+.tabs .container {
+  padding: 0;
+}
+
+.heading__title {
+    font-size: 24px;
+}
+
+.heading__sub {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+    .result__swiper {
+        height: 206px;
+    }
+
+
+.filters .form-select, .details-select, .details-input {
+  height: 50px;
+}
+
+.filters {
+    padding: 30px 0 30px;
+    margin-bottom: 50px;
+}
+
+.filters__check, .details-check {
+    font-size: 18px;
+}
+
+.filters__legend {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.details-news__row {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.details-group__title, .paySecurity__subtitle {
+    font-size: 22px;
+}
+
+.payrow__label {
+    font-size: 18px;
+}
+
+.payrow {
+    grid-template-columns: 1fr;
+}
+
+
+.payrow__val {
+        font-size: 24px;
+        margin-top: 10px;
+        text-align: start;
+}
+
+.paynow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.confnote {
+  font-size: 12px;
+}
+
+.amend-booking-details-box {
+    padding: 20px 15px 20px;
+}
+
+
+.amend-booking-details-box__row {
+    font-size: 14px;
+}
+
+.amend-booking-details-box__name {
+  font-size: 18px;
+}
+
+.amend-booking-details-box__price {
+  font-size: 26px;
+}
+
+.amend-booking-actions-row {
+    flex-direction: column;
+}
+
+.amend-booking-actions-row button {
+  width: max-content;
+  margin: auto;
+}
+
+.tabs__price {
+    font-size: 30px;
+}
+
+
+.tabs__bar {
+    height: 124px;
+}
+
+.heading__filter {
+  padding: 8px 13px;
+  font-size: 0;
+}
+
+.stepsbar-mob {
+  display: flex;
+    gap: 5px;
+    font-size: 12px;
+    font-family: var(--font-sans);
+    justify-content: center;
+}
+
+.stepsbar-mob__label {
+  font-weight: 600;
+}
+
+.stepsbar-mob__sep {
+  color: #caa24b;
+}
+
+.panel .filters__sort{
+ width: 100%;
+}
+
+.panel .form-select {
+  height: 50px;
+}
+
+.result__more {
+  margin: 12px 0;
+}
+
+.results > .result-grid:nth-child(even of .result-grid)  {
+  background: rgba(19, 51, 81, 0.05);
+  margin: 0 -15px;
+  padding: 0 15px;
+}
+
+.extra__name {
+  font-size: 18px;
+}
+
+.extra__price {
+  font-size: 24px;
+}
+
+.extra__desc {
+  font-size: 12px;
+}
+
+.extra__qty {
+    margin-top: 20px;
+}
+
+.details-group__subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-family: var(--font-sans);
 }
 
 }

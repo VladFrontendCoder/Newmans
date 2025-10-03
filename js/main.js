@@ -460,12 +460,14 @@ function markerIcon(active = false){
    const btn   = document.getElementById('menuBtn');
   const modal = document.getElementById('mobileNav');
 
-
+if(btn) {
   btn.addEventListener('click', () => {
     btn.classList.toggle('is-open'); 
     modal.classList.toggle('is-open');
     document.body.classList.toggle('no-scroll');
   });
+
+}
 
 
   document.addEventListener('click', (e) => {
@@ -597,4 +599,280 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = e.target;
     if (el.matches('select[required]')) validateField(el);
   });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var step2 = document.getElementById('step-2');
+  var step3 = document.getElementById('step-3');
+  var step4 = document.getElementById('step-4');
+  var step5 = document.getElementById('step-5');
+  var step6 = document.getElementById('step-6');
+  var stepsDots = document.querySelectorAll('.stepsbar__item');
+
+  function updateStepsProgress(n) {
+    stepsDots.forEach(function (el, idx) {
+       el.classList.toggle('stepsbar__item--active', idx < (n - 1));
+    });
+  }
+
+var mobBar = document.getElementById('stepsbar-mob');
+var mobStepEl = document.getElementById('stepsbar-mob-step');
+var mobTitleEl = document.getElementById('stepsbar-mob-title');
+
+function updateMobileStepsBar(n) {
+  if (!mobBar) { return; }
+  var idx = n - 1;
+  var item = stepsDots[idx];
+  var title = '';
+  if (item) {
+    var t = item.querySelector('.stepsbar__txt');
+    if (t) { title = t.textContent.trim(); }
+  }
+  if (mobStepEl) { mobStepEl.textContent = 'Step ' + n + ':'; }
+  if (mobTitleEl) { mobTitleEl.textContent = title; }
+}
+
+
+function setStep(n) {
+  if (step2) { step2.classList.remove('step--active'); }
+  if (step3) { step3.classList.remove('step--active'); }
+  if (step4) { step4.classList.remove('step--active'); }
+  if (step5) { step5.classList.remove('step--active'); }
+  if (step6) { step6.classList.remove('step--active'); }
+
+  if (n === 2 && step2) { step2.classList.add('step--active'); }
+  if (n === 3 && step3) { step3.classList.add('step--active'); }
+  if (n === 4 && step4) { step4.classList.add('step--active'); }
+  if (n === 5 && step5) { step5.classList.add('step--active'); }
+  if (n === 6 && step6) { step6.classList.add('step--active'); }
+
+updateStepsProgress(n);          // если используешь
+  updateMobileStepsBar(n);         // ← ДОБАВИТЬ ЭТО
+
+  if (n === 5) { syncPayment(); }
+  if (n === 6) { syncConfirmation(); }
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+}
+
+  document.querySelectorAll('[data-goto-step]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var s = parseInt(btn.getAttribute('data-goto-step'), 10);
+      setStep(s);
+    });
+  });
+
+  var tabButtons = document.querySelectorAll('.tabs__btn');
+  var panels = document.querySelectorAll('.tabs__panel');
+
+  function activatePanel(id) {
+    tabButtons.forEach(function (b) {
+      b.classList.remove('tabs__btn--active');
+    });
+    panels.forEach(function (p) {
+      p.classList.remove('tabs__panel--active');
+    });
+    var btn = document.querySelector('.tabs__btn[data-panel="' + id + '"]');
+    var panel = document.getElementById(id);
+    if (btn) {
+      btn.classList.add('tabs__btn--active');
+    }
+    if (panel) {
+      panel.classList.add('tabs__panel--active');
+    }
+    document.querySelectorAll('.js-filters').forEach(function (f) {
+      f.style.display = 'none';
+    });
+  }
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activatePanel(btn.getAttribute('data-panel'));
+    });
+  });
+
+document.addEventListener('click', function (e) {
+  var toggleBtn = e.target.closest('.js-filter-toggle');
+  if (toggleBtn) {
+    var panel = toggleBtn.closest('.tabs__panel');
+    var filtersBox = panel ? panel.querySelector('.js-filters') : null;
+    if (filtersBox) {
+      filtersBox.style.display = (filtersBox.style.display === 'block') ? 'none' : 'block';
+    }
+    return;
+  }
+
+  var closeBtn = e.target.closest('.js-filters-close');
+  if (closeBtn) {
+    var f = closeBtn.closest('.js-filters');
+    if (f) {
+      f.style.display = 'none';
+    }
+  }
+});
+
+  document.querySelectorAll('.result__swiper').forEach(function (node) {
+    new Swiper(node, {
+      loop: false,
+      pagination: {
+        el: node.querySelector('.swiper-pagination'),
+        clickable: true
+      }
+    });
+  });
+
+  var selects = document.querySelectorAll('.extra__select');
+  var sumExtras = document.getElementById('sum-extras');
+  var sumAccom = document.getElementById('sum-accom');
+  var sumTotal = document.getElementById('sum-total');
+  var sumToday = document.getElementById('sum-today');
+
+  function parseMoney(text) {
+    var t = String(text).replace('£', '').replace(',', '');
+    return parseFloat(t);
+  }
+
+  function formatMoney(x) {
+    return '£' + x.toFixed(2);
+  }
+
+  function recalc() {
+    var extras = 0;
+    selects.forEach(function (s) {
+      var qty = parseInt(s.value, 10);
+      var price = parseFloat(s.getAttribute('data-price'));
+      if (!isNaN(qty) && !isNaN(price)) {
+        extras += qty * price;
+      }
+    });
+    var base = sumAccom ? parseMoney(sumAccom.textContent) : 0;
+    var total = base + extras;
+    var today = total * 0.51;
+    if (sumExtras) {
+      sumExtras.textContent = formatMoney(extras);
+    }
+    if (sumTotal) {
+      sumTotal.textContent = formatMoney(total);
+    }
+    if (sumToday) {
+      sumToday.textContent = formatMoney(today);
+    }
+  }
+
+  selects.forEach(function (s) {
+    s.addEventListener('change', recalc);
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var MOBILE_BP = 768;
+
+  function isMobile() {
+    return window.innerWidth < MOBILE_BP;
+  }
+
+  // ---------- result__more: к info на мобиле / в media на десктопе ----------
+  function relocateResultMore() {
+    var mobile = isMobile();
+    document.querySelectorAll('.result-grid').forEach(function (grid) {
+      var media = grid.querySelector('.result__media');
+      var info  = grid.querySelector('.result-grid__info');
+      var more  = grid.querySelector('.result__more');
+      if (!media || !info || !more) {
+        return;
+      }
+      if (mobile) {
+        if (more.previousElementSibling !== info) {
+          info.insertAdjacentElement('afterend', more);
+        }
+      } else {
+        if (more.parentElement !== media) {
+          media.appendChild(more);
+        }
+      }
+    });
+  }
+
+  // ---------- extra__qty: в конец body на мобиле / обратно в top на десктопе ----------
+  function relocateExtraQty() {
+    var mobile = isMobile();
+    document.querySelectorAll('.extra').forEach(function (card) {
+      var qty  = card.querySelector('.extra__qty');
+      var body = card.querySelector('.extra__body');
+      var top  = card.querySelector('.extra__top');
+      if (!qty || !body) {
+        return;
+      }
+      if (mobile) {
+        if (qty.parentElement !== body) {
+          body.appendChild(qty);
+        }
+      } else {
+        if (top && qty.parentElement !== top) {
+          top.appendChild(qty);
+        }
+      }
+    });
+  }
+
+  // ---------- pagenav: после summary внутри ТЕКУЩЕГО step на мобиле / назад на десктопе ----------
+  // создаём "якорь" перед каждым .pagenav, чтобы знать, куда его вернуть
+  function ensureAnchorBefore(el) {
+    if (!el._anchor) {
+      var anchor = document.createElement('span');
+      anchor.className = 'pagenav-anchor';
+      anchor.style.display = 'none';
+      el._anchor = anchor;
+      if (el.parentNode) {
+        el.parentNode.insertBefore(anchor, el);
+      }
+    }
+    return el._anchor;
+  }
+
+  function relocatePageNav() {
+    var mobile = isMobile();
+
+    document.querySelectorAll('.step').forEach(function (step) {
+      var summary = step.querySelector('.summary');
+      if (!summary) {
+        return;
+      }
+
+      step.querySelectorAll('.pagenav').forEach(function (nav) {
+        // якорь на исходной позиции (один раз)
+        ensureAnchorBefore(nav);
+
+        if (mobile) {
+          // перемещаем сразу после .summary в ЭТОМ step
+          if (summary.nextElementSibling !== nav) {
+            summary.insertAdjacentElement('afterend', nav);
+          }
+        } else {
+          // возвращаем туда, где стоял изначально
+          if (nav._anchor && nav._anchor.parentNode) {
+            nav._anchor.parentNode.insertBefore(nav, nav._anchor);
+          }
+        }
+      });
+    });
+  }
+
+  function reflowMobileRelocations() {
+    relocateResultMore();
+    relocateExtraQty();
+    relocatePageNav();
+  }
+
+  reflowMobileRelocations();
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(reflowMobileRelocations, 100);
+  });
+
+  // вызови это после динамической подгрузки карточек/шагов
+  window.reflowMobileRelocations = reflowMobileRelocations;
 });

@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css?v=1.2" rel="stylesheet" />
+
+     <link href="css/media.css?v=1.2" rel="stylesheet" />
+
+    <title>NEWMANS</title>
+  </head>
+<body class="bookingPage">
+
+      <header class="site-header">
+        <div class="header-bottom">
+      <div class="container p-xl-0">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-6 col-sm-4 col-md-3">
+               <a href="/Newmans/index.html" class="header-bottom__logo d-inline-flex align-items-center ">
+              <img src="img/mob_logo.png" alt="Newmans Holiday Homes" class="header-bottom__logo-img" />
+            </a>
+            </div>
+            <div class="col-auto d-none d-lg-flex gap-4 align-items-end justify-content-end">
+                <a href="tel:01395200974" class="header-top__contact d-flex align-items-end gap-3 ">
+                    <img src="img/phone.png" alt="icon"> 01395 200974
+                </a>
+                <a href="/Newmans/contact.html" class="header-top__contact d-flex align-items-end gap-3">Contact us</a>
+                <a href="#" class="header-top__contact d-flex align-items-end gap-3 ">
+                  <img src="img/user.png" alt="icon"> Customer Login
+                </a>
+            </div>
+          <div class="col-auto d-flex align-items-center gap-4 d-lg-none">
+            <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="mobileNav">
+              <span class="menu-icon" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="menu-label">Menu</span>
+            </button>
+
+            <a href="#" style="width:33px;">
+              <img src="./img/user.png" alt="icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </header>   
+
+    <main>
+ <section class="booking">
+  
+      <div class="stepsbar-mob d-md-none" id="stepsbar-mob">
+        <span class="stepsbar-mob__label">Booking in progress</span>
+        <span class="stepsbar-mob__sep">|</span>
+        <span class="stepsbar-mob__step" id="stepsbar-mob-step">Step 2:</span>
+        <span class="stepsbar-mob__title" id="stepsbar-mob-title">Availability</span>
+      </div>
+      <div class="stepsbar">
+        <div class="stepsbar__item stepsbar__item--active">
+          <div class="stepsbar__dot">1</div>
+          <div class="stepsbar__txt">Search</div>
+        </div>
+        <div class="stepsbar__item">
+          <div class="stepsbar__dot">2</div>
+          <div class="stepsbar__txt">Availability</div>
+        </div>
+        <div class="stepsbar__item">
+          <div class="stepsbar__dot">3</div>
+          <div class="stepsbar__txt">Extras</div>
+        </div>
+        <div class="stepsbar__item">
+          <div class="stepsbar__dot">4</div>
+          <div class="stepsbar__txt">Your Details</div>
+        </div>
+        <div class="stepsbar__item">
+          <div class="stepsbar__dot">5</div>
+          <div class="stepsbar__txt">Payment</div>
+        </div>
+        <div class="stepsbar__item">
+          <div class="stepsbar__dot">6</div>
+          <div class="stepsbar__txt">Confirmation</div>
+        </div>
+      </div>
+
+      <div class="step step--active" id="step-2">
+        <div class="booking-form">
+            <div class="container">
+                <form>
+                    <div class="offer-field">
+                    <img class="field-icon" src="img/map.png" alt="" aria-hidden="true">
+                    <select id="location" class="field-control" aria-label="Location / Park">
+                        <option>Location / Park</option>
+                        <option>Park A</option>
+                        <option>Park B</option>
+                        <option>Park C</option>
+                    </select>
+                    </div>
+
+                    <div class="offer-field offer-field--date">
+                        <img class="field-icon" src="img/calendar.png" alt="" aria-hidden="true">
+                        <input type="text" class="field-control date-display" placeholder="Enter dates" readonly="">
+
+                        <input type="date" class="date-native" name="arrival" aria-label="Arrival date">
+                    </div>
+
+                    <div class="offer-field">
+                    <img class="field-icon" src="img/users.png" alt="" aria-hidden="true">
+                    <select id="guests" class="field-control" aria-label="Guests">
+                        <option selected="">2 adults, 0 children</option>
+                        <option>1 adult</option>
+                        <option>2 adults</option>
+                        <option>2 adults, 1 child</option>
+                        <option>2 adults, 2 children</option>
+                    </select>
+                    </div>
+
+                    <button type="submit" class="btn w-100">Check availability</button>
+                </form>
+            </div>
+        </div>
+        
+
+        <div class="tabs">
+            <div class="container">
+                <div class="tabs__bar">
+                    <button type="button" class="tabs__btn tabs__btn--active" data-panel="p1">
+                        <div class="tabs__range">01 - 07 Sept</div>
+                                    <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                    <button type="button" class="tabs__btn" data-panel="p2">
+                   <div class="tabs__range">01 - 07 Sept</div>
+                                    <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                    <button type="button" class="tabs__btn" data-panel="p3">
+                  <div class="tabs__range">01 - 07 Sept</div>
+                                    <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                    <button type="button" class="tabs__btn" data-panel="p4">
+                  <div class="tabs__range">01 - 07 Sept</div>
+                                    <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                    <button type="button" class="tabs__btn" data-panel="p5">
+                    <div class="tabs__range">01 - 07 Sept</div>
+                                    <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                    <button type="button" class="tabs__btn" data-panel="p6">
+                        <div class="tabs__range">01 - 07 Sept</div>
+                        <div class="tabs__price"><span>from</span> £280</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel tabs__panel tabs__panel--active" id="p1">
+                    <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-9 col-md-10 col-xl-8">
+                        <h1 class="heading__title">Your holiday search</h1>
+                         <div class="heading__sub">Accommodation at Brean Sands, Somerset, 01 - 07 September, 4 adults</div>
+                    </div>
+                    <div class="col-3 col-md-2 col-xl-4 text-end">
+                        <button  type="button" class="btn heading__filter d-flex align-items-center ms-auto gap-md-3 js-filter-toggle"><img src="img/filter.png" alt=""> Filter</button>
+                       
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="filters js-filters" id="filters">
+            <div class="container">
+                <div class="filters__wrap">
+                    <div class="row g-3 g-md-4 filters__row">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>County</option>
+                        <option>Somerset</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select Park</option>
+                        <option>Brean Sands</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select accommodation</option>
+                        <option>Economy</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select location on park</option>
+                        <option>Near beach</option>
+                        </select>
+                    </div>
+                    </div>
+
+                    <div class="filters__line"></div>
+
+                    <div class="filters__legend mb-4">Features</div>
+
+                    <div class="row filters__checks">
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Dog Friendly</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Private Drive or Allocated parking</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Hot Tub</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Room for a travel cot</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Additional Heating</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Bath</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Wifi Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Washing Machine</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Veranda</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Ramp Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Central Heating</span>
+                        </label>
+                    </div>
+                    </div>
+
+                    <div class="filters__line d-none d-md-block"></div>
+
+                    <div class="filters__footer">
+                    <div class="filters__sort d-none d-md-block">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn m-auto mt-3 m-md-0 js-filters-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="container">
+                <div class="results">
+                    <div class="filters__sort d-md-none">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                            <div class="result-grid__info mt-3 mt-md-0">
+                              <div class="result__head">
+                                <div class="result__name">Economy <span>|</span> JC70</div>
+                                <div class="result__meta">
+                                  <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                                  <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                                </div>
+                              </div>
+                              <ul class="result__features">
+                                <li>Central Heating</li>
+                                <li>Dog Friendly</li>
+                                <li>Private or Allocated parking</li>
+                                <li>Room for a Travel Cot</li>
+                                <li>Washing Machine</li>
+                                <li>Veranda</li>
+                                <li>Wifi access</li>
+                              </ul>
+                            </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+                      </div>
+
+
+                    <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                        <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel tabs__panel" id="p2">
+                  <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-9 col-md-10 col-xl-8">
+                        <h1 class="heading__title">Your holiday search2</h1>
+                         <div class="heading__sub">Accommodation at Brean Sands, Somerset, 01 - 07 September, 4 adults</div>
+                    </div>
+                    <div class="col-3 col-md-2 col-xl-4 text-end">
+                        <button type="button" class="btn heading__filter d-flex align-items-center ms-auto gap-md-3 js-filter-toggle"><img src="img/filter.png" alt=""> Filter</button>
+                       
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="filters js-filters" id="filters">
+            <div class="container">
+                <div class="filters__wrap">
+                    <div class="row g-3 g-md-4 filters__row">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>County</option>
+                        <option>Somerset</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select Park</option>
+                        <option>Brean Sands</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select accommodation</option>
+                        <option>Economy</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select location on park</option>
+                        <option>Near beach</option>
+                        </select>
+                    </div>
+                    </div>
+
+                    <div class="filters__line"></div>
+
+                    <div class="filters__legend mb-4">Features</div>
+
+                    <div class="row filters__checks">
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Dog Friendly</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Private Drive or Allocated parking</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Hot Tub</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Room for a travel cot</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Additional Heating</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Bath</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Wifi Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Washing Machine</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Veranda</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Ramp Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Central Heating</span>
+                        </label>
+                    </div>
+                    </div>
+
+                    <div class="filters__line d-none d-md-block"></div>
+
+                    <div class="filters__footer">
+                    <div class="filters__sort d-none d-md-block">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+                    <button  type="button" class="btn m-auto mt-3 m-md-0 js-filters-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="results">
+                    <div class="filters__sort d-md-none">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                            <div class="result-grid__info mt-3 mt-md-0">
+                              <div class="result__head">
+                                <div class="result__name">Economy <span>|</span> JC70</div>
+                                <div class="result__meta">
+                                  <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                                  <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                                </div>
+                              </div>
+                              <ul class="result__features">
+                                <li>Central Heating</li>
+                                <li>Dog Friendly</li>
+                                <li>Private or Allocated parking</li>
+                                <li>Room for a Travel Cot</li>
+                                <li>Washing Machine</li>
+                                <li>Veranda</li>
+                                <li>Wifi access</li>
+                              </ul>
+                            </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+                      </div>
+
+
+                    <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                        <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel tabs__panel" id="p3">
+                  <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-9 col-md-10 col-xl-8">
+                        <h1 class="heading__title">Your holiday search3</h1>
+                         <div class="heading__sub">Accommodation at Brean Sands, Somerset, 01 - 07 September, 4 adults</div>
+                    </div>
+                    <div class="col-3 col-md-2 col-xl-4 text-end">
+                        <button type="button" class="btn heading__filter d-flex align-items-center ms-auto gap-md-3 js-filter-toggle"><img src="img/filter.png" alt=""> Filter</button>
+                       
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="filters js-filters" id="filters">
+            <div class="container">
+                <div class="filters__wrap">
+                    <div class="row g-3 g-md-4 filters__row">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>County</option>
+                        <option>Somerset</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select Park</option>
+                        <option>Brean Sands</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select accommodation</option>
+                        <option>Economy</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                        <option selected>Select location on park</option>
+                        <option>Near beach</option>
+                        </select>
+                    </div>
+                    </div>
+
+                    <div class="filters__line"></div>
+
+                    <div class="filters__legend mb-4">Features</div>
+
+                    <div class="row filters__checks">
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Dog Friendly</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Private Drive or Allocated parking</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Hot Tub</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Room for a travel cot</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Additional Heating</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Bath</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Wifi Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Washing Machine</span>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Veranda</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Ramp Access</span>
+                        </label>
+                        <label class="form-check filters__check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Central Heating</span>
+                        </label>
+                    </div>
+                    </div>
+
+                    <div class="filters__line d-none d-md-block"></div>
+
+                    <div class="filters__footer">
+                    <div class="filters__sort d-none d-md-block">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+                    <button  type="button" class="btn m-auto mt-3 m-md-0 js-filters-close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="results">
+                    <div class="filters__sort d-md-none">
+                        <select class="form-select">
+                        <option selected>Sort by</option>
+                        <option>Price</option>
+                        </select>
+                    </div>
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                            <div class="result-grid__info mt-3 mt-md-0">
+                              <div class="result__head">
+                                <div class="result__name">Economy <span>|</span> JC70</div>
+                                <div class="result__meta">
+                                  <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                                  <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                                </div>
+                              </div>
+                              <ul class="result__features">
+                                <li>Central Heating</li>
+                                <li>Dog Friendly</li>
+                                <li>Private or Allocated parking</li>
+                                <li>Room for a Travel Cot</li>
+                                <li>Washing Machine</li>
+                                <li>Veranda</li>
+                                <li>Wifi access</li>
+                              </ul>
+                            </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+                      </div>
+
+
+                    <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                        <hr class="results__divider d-none d-xl-block">
+
+                    <div class="result-grid">
+                                <div class="result__media">
+                                  <div class="result__badge">BRONZE</div>
+                                  <div class="swiper result__swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <img class="result__img" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                  </div>
+                                  <a href="#" class="result__more">See more details</a>
+                                </div>
+
+                        <div class="result-grid__info mt-3 mt-md-0">
+                          <div class="result__head">
+                            <div class="result__name">Economy <span>|</span> JC70</div>
+                            <div class="result__meta">
+                              <span class="result__meta_bed">3 Bedrooms <img src="img/bed.png" alt="bed icon"></span>
+                              <span class="result__meta_people">Sleeps 6 <img src="img/people.png" alt="people icon"></span>
+                            </div>
+                          </div>
+                          <ul class="result__features">
+                            <li>Central Heating</li>
+                            <li>Dog Friendly</li>
+                            <li>Private or Allocated parking</li>
+                            <li>Room for a Travel Cot</li>
+                            <li>Washing Machine</li>
+                            <li>Veranda</li>
+                            <li>Wifi access</li>
+                          </ul>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+
+                          <button type="button" class="btn" disabled>Sold Out</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark" data-goto-step="3">Select</button>
+                        </div>
+
+                        <div class="result-grid__slot">
+                          <div>
+                            <div class="result__slot-date">ARRIVING</div>
+                            <div class="result__slot-day">01 Sep 2025</div>
+                            <div class="result__slot-len">For 4 nights</div>
+                          </div>
+                          <button type="button" class="btn btn-dark">Select</button>
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+
+        </div>
+
+      </div>
+
+      <div class="step" id="step-3">
+        <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-12">
+                        <h2 class="heading__title">Extras & deposits</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row gx-5">
+            <div class="col-md-7 col-xl-8">
+              <div class="extra">
+                <div class="extra__icon"><img src="img/bookingPage/doc.png" alt="img"></div>
+                <div class="extra__body">
+                  <div class="extra__top">
+                    <div class="extra__name">Cancellation Plan</div>
+                    <div class="extra__qty">
+                      <select class="form-select extra__select" data-price="22">
+                        <option value="0" selected>Qty</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="extra__price">£22</div>
+                  <div class="extra__desc">Why not take advantage of our great Cancellation Plan. The cost will be added to the deposit you pay today.</div>
+                </div>
+              </div>
+
+              <div class="extra">
+                 <div class="extra__icon"><img src="img/bookingPage/dog.png" alt="img"></div>
+                <div class="extra__body">
+                  <div class="extra__top">
+                    <div class="extra__name">Number of Dogs</div>
+                    <div class="extra__qty">
+                      <select class="form-select extra__select" data-price="27.5">
+                        <option value="0" selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="extra__price">£27.50 <span class="extra__each">Each</span></div>
+                  <div class="extra__desc">For a small additional charge we allow up to two small to medium size dogs.</div>
+                </div>
+              </div>
+
+              <div class="extra">
+                 <div class="extra__icon"><img src="img/bookingPage/iron.png" alt="img"></div>
+                <div class="extra__body">
+                  <div class="extra__top">
+                    <div class="extra__name">Iron & Ironing board</div>
+                    <div class="extra__qty">
+                      <select class="form-select extra__select" data-price="10">
+                        <option value="0" selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="extra__price">£10 <span class="extra__each">Each</span></div>
+                  <div class="extra__desc">Look your best. Hire an iron and ironing board.</div>
+                </div>
+              </div>
+
+              <div class="extra">
+                 <div class="extra__icon"><img src="img/bookingPage/cot.png" alt="img"></div>
+                <div class="extra__body">
+                  <div class="extra__top">
+                    <div class="extra__name">Travel cot</div>
+                    <div class="extra__qty">
+                      <select class="form-select extra__select" data-price="10">
+                        <option value="0" selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="extra__price">£15 <span class="extra__each">Each</span></div>
+                  <div class="extra__desc">
+                    <p> 
+ Comfortable travel cot hire for infants up to 12 months. 
+                    </p>
+                    <p>
+All travel cots will have been sanitised and inspected ready for collection from our Exmouth office on the main road into Devon Cliffs.
+                    </p>
+                    <p>
+Please note: You will need to bring your own cot linen. In most holiday homes cots will only fit in the living room area unless otherwise stated.
+                    </p>
+                
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- High chair -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/high.png" alt="High chair">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">High chair</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="10">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">£10 <span class="extra__each">Each, Plus a refundable deposit of £20.00</span></div>
+    <div class="extra__desc">
+      <p>Suitable for infants</p>
+      <p>All high chairs will have been sanitised &amp; inspected and delivered to your accommodation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Childs Pushchair -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/pushcheir.png" alt="Childs Pushchair">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">Childs Pushchair</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="15">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">£15</div>
+    <div class="extra__desc">
+      <p>Light weight stroller</p>
+      <p>Light weight baby buggy. Handle height 105cm. Comfortable backrest with fillings 5-point safety harness and storage basket.</p>
+      <p>Compact size after folding.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Bed Guard -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/bed.png" alt="Bed Guard">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">Bed Guard</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="10">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">£10</div>
+    <div class="extra__desc">
+      <p>This useful bed guard can help stop children from rolling out of bed.</p>
+      <p>Quick and easy to attach. All bed guards will have been sanitised and inspected and delivered to your accommodation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Early Check-in -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/time.png" alt="Early Check-in">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">Early Check-in</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="20">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">£20</div>
+    <div class="extra__desc">
+      <p>Caravan will be prepared for arrival 3hrs ahead of normal check in time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Double Bed Linen Pack + Fitting -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/doubke_bed.png" alt="Double Bed Linen Pack + Fitting">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">Double Bed Linen Pack + Fitting</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="0">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">FREE</div>
+    <div class="extra__desc">
+      <p>A double duvet cover, double sheet and 4 pillowcases. Fitted.</p>
+      <p>Freshly laundered, and delivered direct to your holiday accommodation.</p>
+      <p>Please select the the number of linen packs required.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Single Bed Linen Pack + Fitting -->
+<div class="extra">
+  <div class="extra__icon">
+    <img src="img/bookingPage/single_bed.png" alt="Single Bed Linen Pack + Fitting">
+  </div>
+  <div class="extra__body">
+    <div class="extra__top">
+      <div class="extra__name">Single Bed Linen Pack + Fitting</div>
+      <div class="extra__qty">
+        <select class="form-select extra__select" data-price="0">
+          <option value="0" selected>Qty</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+    <div class="extra__price">FREE</div>
+    <div class="extra__desc">
+      <p>A double duvet cover, double sheet and 4 pillowcases. Fitted.</p>
+      <p>Freshly laundered, and delivered direct to your holiday accommodation.</p>
+      <p>Please select the the number of linen packs required.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+          <div class="pagenav pagenav--wide">
+            <button type="button" class="btn" data-goto-step="2">Back</button>
+            <button type="button" class="btn" data-goto-step="4">Next Step</button>
+          </div>
+
+            </div>
+
+            <div class="col-md-5 col-xl-4 mt-4 mt-md-0">
+              <div class="summary">
+                <div class="summary__head">Your holiday summary</div>
+                <div class="summary__box">
+                  <div class="summary__row">
+                    <div class="summary__label">Park:</div>
+                    <div class="summary__val">Brean Leisure Park</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation:</div>
+                    <div class="summary__val">Bronze 2 bedroom<br>Holiday Home</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Number of nights:</div>
+                    <div class="summary__val">4</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Arrival:</div>
+                    <div class="summary__val">Sat 11th</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Departure:</div>
+                    <div class="summary__val">Sat 18th Oct 2025</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Adults:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Children:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation</div>
+                    <div class="summary__val" id="sum-accom">£866.32</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+
+                  <div class="summary__row">
+                    <div class="summary__label">Extras</div>
+                    <div class="summary__val" id="sum-extras">£0.00</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">Total Holiday Cost</div>
+                    <div class="summary__val" id="sum-total">£866.32</div>
+                  </div>
+                  <div class="summary__line"></div>
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">To Pay Today</div>
+                    <div class="summary__val" id="sum-today">£441.32</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="step " id="step-4">
+
+          <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-12">
+                        <h2 class="heading__title">Your details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row gx-5">
+              <div class="col-md-7 col-xl-8">
+
+                <div class="details-group py-4">
+                  <div class="details-group__title">Primary contact</div>
+                  <div class="row g-3 align-items-end mb-3mt-3">
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">Title</label>
+                      <select class="form-select details-select">
+                        <option selected>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                        <option>Dr</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">First name*</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">Last name*</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">Email address*</label>
+                      <input type="email" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">Telephone*</label>
+                      <input type="tel" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4 my-2">
+                      <label class="form-label details-label">and or mobile</label>
+                      <input type="tel" class="form-control details-input">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="details-group  py-4">
+                  <div class="details-group__title">Car details</div>
+                  <div class="details-text d-none d-md-block">If you can, please provide details of cars you will be bringing. Don’t worry if you don’t know this now, but we will need them by 5 days before your arrival date. Additional COVID safety procedures means the park needs prior notification from us to allow you on park.</div>
+                  <div class="row g-3">
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Vehicle 1</label>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car make</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car model</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car registration</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Vehicle 2</label>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car make</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car model</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Car registration</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="details-group  py-4">
+                  <div class="details-group__title">Holiday party members</div>
+                  <div class="details-text">Enter yourself first, then everyone else in your party.</div>
+
+                  <div class="row g-3 align-items-end mb-3">
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Party member 1</label>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Title</label>
+                      <select class="form-select details-select">
+                        <option>1</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">First name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Last name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Age</label>
+                      <select class="form-select details-select">
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 align-items-end mb-3">
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Party member 2</label>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Title</label>
+                      <select class="form-select details-select">
+                        <option>2</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">First name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Last name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Age</label>
+                      <select class="form-select details-select">
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 align-items-end mb-3">
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Party member 3</label>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Title</label>
+                      <select class="form-select details-select">
+                        <option>3</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">First name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Last name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Age</label>
+                      <select class="form-select details-select">
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 align-items-end mb-3">
+                    <div class="col-12 d-md-none">
+                      <label class="details-group__subtitle">Party member 4</label>
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Title</label>
+                      <select class="form-select details-select">
+                        <option>4</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">First name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label details-label">Last name</label>
+                      <input type="text" class="form-control details-input">
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label details-label">Age</label>
+                      <select class="form-select details-select">
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="details-group  py-4">
+                  <div class="details-group__title">Further information</div>
+                  <div class="details-text">If you can, please provide details of cars you will be bringing.</div>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label details-label">How did you hear of us?</label>
+                      <select class="form-select details-select">
+                        <option selected></option>
+                        <option>Friends</option>
+                        <option>Ads</option>
+                        <option>Search</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="details-news mt-3">
+                    <div class="details-label">How may we contact you with future offers and news?</div>
+                    <div class="details-news__row mt-2">
+                      <label class="form-check details-check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Post</span>
+                      </label>
+                      <label class="form-check details-check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Email</span>
+                      </label>
+                      <label class="form-check details-check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Telephone</span>
+                      </label>
+                      <label class="form-check details-check">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-label">Text</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                  <div class="pagenav pagenav--wide">
+                  <button type="button" class="btn" data-goto-step="3">Back</button>
+                  <button type="button" class="btn" data-goto-step="5">Next Step</button>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-xl-4 mt-4 mt-md-0">
+              <div class="summary">
+                <div class="summary__head">Your holiday summary</div>
+                <div class="summary__box">
+                  <div class="summary__row">
+                    <div class="summary__label">Park:</div>
+                    <div class="summary__val">Brean Leisure Park</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation:</div>
+                    <div class="summary__val">Bronze 2 bedroom<br>Holiday Home</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Number of nights:</div>
+                    <div class="summary__val">4</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Arrival:</div>
+                    <div class="summary__val">Sat 11th</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Departure:</div>
+                    <div class="summary__val">Sat 18th Oct 2025</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Adults:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Children:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation</div>
+                    <div class="summary__val" id="sum-accom">£866.32</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+
+                  <div class="summary__row">
+                    <div class="summary__label">Extras</div>
+                    <div class="summary__val" id="sum-extras">£0.00</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">Total Holiday Cost</div>
+                    <div class="summary__val" id="sum-total">£866.32</div>
+                  </div>
+                  <div class="summary__line"></div>
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">To Pay Today</div>
+                    <div class="summary__val" id="sum-today">£441.32</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="step" id="step-5">
+          <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-12">
+                        <h2 class="heading__title">Payment</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row gx-5">
+              <div class="col-md-7 col-xl-8">
+                <div class="paybox">
+                  <div class="details-group__title">Payment amount</div>
+
+                  <div class="payrow">
+                    <div class="payrow__label">Accommodation</div>
+                    
+                    <div class="payrow__val" id="pay-accom">£866.32</div>
+                  </div>
+                  <div class="payrow">
+                    <div class="payrow__label">Extras</div>
+                    
+                    <div class="payrow__val" id="pay-extras">£0.00</div>
+                  </div>
+                  <div class="payrow payrow--bold">
+                    <div class="payrow__label">Total Holiday Cost</div>
+                    
+                    <div class="payrow__val" id="pay-total">£866.32</div>
+                  </div>
+
+                  <div class="paysep"></div>
+
+                  <div class="details-group__title">Amount to pay now</div>
+
+                  <div class="paynow">
+                    <label class="paynow__option">
+                      <input class="form-check-input" type="radio" name="paynow" value="full" checked>
+                      <div>
+                      <span class="paynow__title">Pay in full</span>
+                      <span class="paynow__amount" id="pay-full-amount">£441.32</span>
+                      </div>
+
+                    </label>
+
+                    <label class="paynow__option">
+                      <input class="form-check-input" type="radio" name="paynow" value="deposit">
+                      <div>
+                        <span class="paynow__title">Pay a deposit</span>
+                        <span class="paynow__amount" id="pay-deposit-amount">£80</span>
+                      </div>
+                    </label>
+
+                    <a href="/Newmans/pay.html" class="btn m-auto m-md-0 ms-md-auto">Make payment</a>
+                  </div>
+
+                  <div class="paysep"></div>
+
+                
+                </div>
+
+                <div class="pagenav">
+                    <button type="button" class="btn" data-goto-step="4">Back</button>
+                    <button type="button" class="btn" data-goto-step="6">Next Step</button>
+                  </div>
+
+              </div>
+
+              <div class="col-md-5 col-xl-4 mt-4 mt-md-0">
+              <div class="summary">
+                <div class="summary__head">Your holiday summary</div>
+                <div class="summary__box">
+                  <div class="summary__row">
+                    <div class="summary__label">Park:</div>
+                    <div class="summary__val">Brean Leisure Park</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation:</div>
+                    <div class="summary__val">Bronze 2 bedroom<br>Holiday Home</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Number of nights:</div>
+                    <div class="summary__val">4</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Arrival:</div>
+                    <div class="summary__val">Sat 11th</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Departure:</div>
+                    <div class="summary__val">Sat 18th Oct 2025</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Adults:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Children:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation</div>
+                    <div class="summary__val" id="sum-accom">£866.32</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+
+                  <div class="summary__row">
+                    <div class="summary__label">Extras</div>
+                    <div class="summary__val" id="sum-extras">£0.00</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">Total Holiday Cost</div>
+                    <div class="summary__val" id="sum-total">£866.32</div>
+                  </div>
+                  <div class="summary__line"></div>
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">To Pay Today</div>
+                    <div class="summary__val" id="sum-today">£441.32</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+              
+        </div>
+
+
+      </div>
+
+      <div class="step " id="step-6">
+          <div class="heading">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-12">
+                        <h2 class="heading__title">Confirmation</h2>
+                         <div class="heading__sub heading__sub_confirmation">It’s time to start planning your holiday!<br>
+                  You’re all booked up…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+          <div class="row g-5">
+                <div class="col-md-7 col-xl-8">
+
+
+                <div class="confsec">
+                    <div class="details-group__title">Payment details</div>
+
+                    <div class="confrow">
+                    <div class="payrow__label">Payment type</div>
+                    <div class="payrow__label">Visa</div>
+                    </div>
+
+                    <div class="confrow payrow--bold confrow--line">
+                    <div class="payrow__label">Amount paid</div>
+                    <div class="payrow__label" id="conf-amount-paid">£866.32</div>
+                    </div>
+                </div>
+
+                <div class="confsec mt-4">
+                    <div class="details-group__title">Contact details</div>
+
+                    <div class="confcontact">
+                    <div >Miss Laura Cannings</div>
+                    <div >38 Jumpers Avenue</div>
+                    <div >Christchurch</div>
+                    <div >Dorset</div>
+                    <div >BH23 2ER</div>
+                    <div >United Kingdom</div>
+                    <div >07808046407</div>
+                    <div >lauracannings@hotmail.com</div>
+                    </div>
+
+                    <div class="confnote mt-3 mt-md-5">
+                    Please contact us if any of the above information is incorrect or if you have any specific requirements
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-5 col-xl-4 mt-4 mt-md-0">
+              <div class="summary">
+                <div class="summary__head">Your holiday summary</div>
+                <div class="summary__box">
+                  <div class="summary__row">
+                    <div class="summary__label">Park:</div>
+                    <div class="summary__val">Brean Leisure Park</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation:</div>
+                    <div class="summary__val">Bronze 2 bedroom<br>Holiday Home</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Number of nights:</div>
+                    <div class="summary__val">4</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Arrival:</div>
+                    <div class="summary__val">Sat 11th</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Departure:</div>
+                    <div class="summary__val">Sat 18th Oct 2025</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Adults:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+                  <div class="summary__row">
+                    <div class="summary__label">Children:</div>
+                    <div class="summary__val">2</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row">
+                    <div class="summary__label">Accommodation</div>
+                    <div class="summary__val" id="sum-accom">£866.32</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+
+                  <div class="summary__row">
+                    <div class="summary__label">Extras</div>
+                    <div class="summary__val" id="sum-extras">£0.00</div>
+                  </div>
+
+                  <div class="summary__line"></div>
+
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">Total Holiday Cost</div>
+                    <div class="summary__val" id="sum-total">£866.32</div>
+                  </div>
+                  <div class="summary__line"></div>
+                  <div class="summary__row summary__row--bold">
+                    <div class="summary__label">To Pay Today</div>
+                    <div class="summary__val" id="sum-today">£441.32</div>
+                  </div>
+                </div>
+              </div>
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+
+
+   
+  </section>
+    </main>
+    
+<footer id="site-footer">
+  <div class="footer-top py-5">
+    <div class="container p-xl-0 text-center">
+      <div class="mb-3">
+        <div class="footer-logo mx-auto">
+          <a href="index.html">
+            <img src="img/footer_logo.png" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center my-4 my-md-5">
+        <a href="#" aria-label="Facebook" class="social-circle">
+          <img src="img/facebook.png" alt="">
+        </a>
+      </div>
+
+     <nav class="mb-4">
+        <ul class="list-inline m-0">
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/Newmans/park.html" class="footer-link">Parks</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/Newmans/subletting.html" class="footer-link">Subletting</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/Newmans/faq.html" class="footer-link">FAQs</a></li>
+          <li class="list-inline-item mx-3 d-block d-md-inline-block"><a href="/Newmans/contact.html" class="footer-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+ 
+      <div class="footer-address mb-4">
+        <div>Dawlish Sands Holiday Park</div>
+        <div>Warren Road, Dawlish Warren, Devon EX7 0PQ</div>
+      </div>
+
+       <a href="tel:01395200974" class="header-top__contact d-flex justify-content-center align-items-end gap-3 mb-4 mb-md-5">
+                    <img src="img/phone.png" alt="icon"> 01395 200974
+                </a>
+
+  
+      <nav class="menu-info">
+        <ul class="list-inline m-0 small">
+          <li class="list-inline-item mx-3"><a href="/Newmans/cookie.html" >Cookies Policy</a></li>
+          <li class="list-inline-item mx-3"><a href="/Newmans/policy.html" >Privacy Policy</a></li>
+          <li class="list-inline-item mx-3"><a href="/Newmans/faq.html" >T&Cs</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    <div class="container text-center small py-4 ff-sans fw-light">
+      Dawlish Sands Caravans Ltd is part of N H H Holdings Ltd, a company registered in England No. 08743459
+    </div>
+  </div>
+</footer>
+
+
+<div class="modalMenu d-lg-none"  id="mobileNav">
+  <div class="modalMenu__overlay" tabindex="-1"></div>
+
+  <div class="modalMenu__block" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <button class="modalMenu__close" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+
+    <ul class="modalMenu__list">
+        <li><a href="/Newmans">HOME</a></li>
+        <li><a href="/Newmans/park.html">PARKS</a></li>
+        <li><a href="/Newmans/subletting.html">SUBLETTING WITH NEWMANS</a></li>
+        <li><a href="/Newmans/park_a_list.html">SPECIAL OFFERS</a></li>
+        <li><a href="/Newmans/faq.html">Faqs</a></li>
+    </ul>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js?v=1.2"></script>
+</body>
+</html>
