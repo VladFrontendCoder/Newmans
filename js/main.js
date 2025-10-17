@@ -74,7 +74,7 @@
 
      slidesPerView: 1,    
     spaceBetween: 22,
-    loop: false,
+    loop: true,
     speed: 600,
     navigation: {
       nextEl: '.local-next',
