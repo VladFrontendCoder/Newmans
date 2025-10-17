@@ -173,61 +173,186 @@
 
           <div class="row mt-3 mt-0">
             <div class="col-12">
-              <div class="accordion faq-accordion">
-                <div class="accordion-item faq-cat">
-                  <button
-                    class="accordion-button faq-cat-btn collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#catGeneral"
-                    aria-expanded="false"
-                  >
-                    <span class="faq-cat-title">General questions (15)</span>
-                  </button>
-                  <div
-                    id="catGeneral"
-                    class="accordion-collapse collapse "
-                    
-                  >
-                    <div class="accordion-body px-5 py-3">
-                      On your day of departure please vacate your accommodation
-                      or pitch by 10am and return your accommodation key back to
-                      the key safe. You are welcome to stay on Park and use the
-                      facilities until 6pm, but please park your car in the main
-                      car park to ensure that the parking space near the near
-                      accommodation is available for the arriving guests.
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="accordion faq-accordion">
-                <div class="accordion-item faq-cat">
-                  <button
-                    class="accordion-button faq-cat-btn collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#catGeneral2"
-                    aria-expanded="false"
-                  >
-                    <span class="faq-cat-title">General questions (12)</span>
-                  </button>
-                  <div
-                    id="catGeneral2"
-                    class="accordion-collapse collapse "
-                    
-                  >
-                    <div class="accordion-body px-5 py-3">
-                      On your day of departure please vacate your accommodation
-                      or pitch by 10am and return your accommodation key back to
-                      the key safe. You are welcome to stay on Park and use the
-                      facilities until 6pm, but please park your car in the main
-                      car park to ensure that the parking space near the near
-                      accommodation is available for the arriving guests.
+                <div class="accordion faq-accordion" id="faq-outer">
+                  <div class="accordion-item faq-cat">
+                    <h2 class="accordion-header" id="headingGeneral">
+                      <button class="accordion-button faq-cat-btn collapsed" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#catGeneral"
+                              aria-expanded="false" aria-controls="catGeneral">
+                        <span class="faq-cat-title">General questions (15)</span>
+                      </button>
+                    </h2>
+
+                    <div id="catGeneral" class="accordion-collapse collapse"
+                        aria-labelledby="headingGeneral" data-bs-parent="#faq-outer">
+                      <div class="accordion-body px-0">
+
+  
+                        <div class="accordion accordion-flush inner-accordion" id="faqGeneralInner">
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ1">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA1"
+                                      aria-expanded="false" aria-controls="genA1">
+                                Q. What time do I need to checkout?
+                              </button>
+                            </h3>
+                            <div id="genA1" class="accordion-collapse collapse"
+                                aria-labelledby="genQ1" data-bs-parent="#faqGeneralInner">
+                              <div class="accordion-body">
+                                On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park and use the facilities until 6pm, but please park your car in
+                                the main car park to ensure that the parking space near the near accommodation
+                                is available for the arriving guests.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ2">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA2"
+                                      aria-expanded="false" aria-controls="genA2">
+                                Q. Can I add extra nights to my holiday?
+                              </button>
+                            </h3>
+                            <div id="genA2" class="accordion-collapse collapse"
+                                aria-labelledby="genQ2" data-bs-parent="#faqGeneralInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ3">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA3"
+                                      aria-expanded="false" aria-controls="genA3">
+                                Q. Can I book on Park to come again?
+                              </button>
+                            </h3>
+                            <div id="genA3" class="accordion-collapse collapse"
+                                aria-labelledby="genQ3" data-bs-parent="#faqGeneralInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ4">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA4"
+                                      aria-expanded="false" aria-controls="genA4">
+                                Q. What happens if I leave something in my accommodation?
+                              </button>
+                            </h3>
+                            <div id="genA4" class="accordion-collapse collapse"
+                                aria-labelledby="genQ4" data-bs-parent="#faqGeneralInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                        </div><!-- /inner -->
+                      </div>
                     </div>
                   </div>
+
+
+                  <div class="accordion-item faq-cat">
+                    <h2 class="accordion-header" id="headingEndHoliday">
+                      <button class="accordion-button faq-cat-btn collapsed" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#catEndHoliday"
+                              aria-expanded="false" aria-controls="catEndHoliday">
+                        <span class="faq-cat-title">At the end of your holiday (4)</span>
+                      </button>
+                    </h2>
+                    <div id="catEndHoliday" class="accordion-collapse collapse"
+                        aria-labelledby="headingEndHoliday" data-bs-parent="#faq-outer">
+                      <div class="accordion-body px-0">
+                         <div class="accordion accordion-flush inner-accordion" id="faqEndInner">
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ1">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA1"
+                                      aria-expanded="false" aria-controls="genA1">
+                                Q. What time do I need to checkout?
+                              </button>
+                            </h3>
+                            <div id="genA1" class="accordion-collapse collapse"
+                                aria-labelledby="genQ1" data-bs-parent="#faqEndInner">
+                              <div class="accordion-body">
+                                On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park and use the facilities until 6pm, but please park your car in
+                                the main car park to ensure that the parking space near the near accommodation
+                                is available for the arriving guests.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ2">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA2"
+                                      aria-expanded="false" aria-controls="genA2">
+                                Q. Can I add extra nights to my holiday?
+                              </button>
+                            </h3>
+                            <div id="genA2" class="accordion-collapse collapse"
+                                aria-labelledby="genQ2" data-bs-parent="#faqEndInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ3">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA3"
+                                      aria-expanded="false" aria-controls="genA3">
+                                Q. Can I book on Park to come again?
+                              </button>
+                            </h3>
+                            <div id="genA3" class="accordion-collapse collapse"
+                                aria-labelledby="genQ3" data-bs-parent="#faqEndInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="genQ4">
+                              <button class="accordion-button inner-btn collapsed" type="button"
+                                      data-bs-toggle="collapse" data-bs-target="#genA4"
+                                      aria-expanded="false" aria-controls="genA4">
+                                Q. What happens if I leave something in my accommodation?
+                              </button>
+                            </h3>
+                            <div id="genA4" class="accordion-collapse collapse"
+                                aria-labelledby="genQ4" data-bs-parent="#faqEndInner">
+                              <div class="accordion-body"> On your day of departure please vacate your accommodation or pitch by 10am
+                                and return your accommodation key back to the key safe. You are welcome to
+                                stay on Park</div>
+                            </div>
+                          </div>
+
+                        </div><!-- /inner -->
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
+
             </div>
           </div>
         </div>

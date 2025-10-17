@@ -127,6 +127,7 @@
 
 
 .header-bottom {
+      padding: 15px 0;
 	background: #133351;
 }
 
@@ -183,6 +184,9 @@ height: 12px;
     right: 10px;
 }
 
+.testimonials .swiper-pagination {
+  bottom: -5px;
+}
 
 .no-scroll{ overflow:hidden; touch-action:none; }
 
@@ -315,7 +319,6 @@ height: 12px;
 
 	.offer-card__title, .section-head h2, .section-head_title h1 {
 	    font-size: 24px;
-      width: auto;
 	}	
 
 	.offer-card {
@@ -338,8 +341,11 @@ height: 12px;
 }
 
 .section-head img, .section-head > img, .info-block div > img {
-    width: 25px!important;
-    margin-top: 4px;
+    width: 27px!important;
+}
+
+.section-head > img {
+  margin-top: 4px;
 }
 
 .find-card__head img {
@@ -434,7 +440,7 @@ height: 12px;
 }
 
 .faq-cat-btn {
-    padding: 5px 0;
+    padding: 5px;
 }
 
 .accordion-button::after {
@@ -445,6 +451,7 @@ height: 12px;
 
 .accordion-body {
     font-size: 12px;
+    padding: 0px 3px 20px;
 }
 
 .text-section {
@@ -702,6 +709,40 @@ transform: translateX(-50%);
 
 .findListWrap-gap {
   gap:50px 0;
+}
+
+.section-nav-list a.active::before {
+  display: none;
+}
+
+.section-nav-arrow {
+  width: 35px;
+  background: #133351;
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  height: 55px;
+  border-radius: 50px 0 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.section-nav-arrow img {
+  width: 10px;
+}
+
+#section-nav .container{
+  position: relative;
+}
+
+.accordion .inner-btn {
+    font-size: 12px;
+        padding: 13px 0;
 }
 
 }

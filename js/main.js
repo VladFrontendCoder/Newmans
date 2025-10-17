@@ -57,14 +57,15 @@
 
 
     const facilitiesSwiper = new Swiper('.facilities-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 3.5,
+    spaceBetween: 10,
     loop: true,
     navigation: {
       nextEl: '.facilities-next',
       prevEl: '.facilities-prev',
     },
     breakpoints: {
+      768:{ slidesPerView: 4,     spaceBetween: 20, },
       1200:{ slidesPerView: 7 }
     }
   });
