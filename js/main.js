@@ -877,3 +877,37 @@ document.addEventListener('DOMContentLoaded', function () {
   // вызови это после динамической подгрузки карточек/шагов
   window.reflowMobileRelocations = reflowMobileRelocations;
 });
+
+
+// Attach smooth horizontal scroll to the arrow button
+(function () {
+  const list = document.querySelector('.section-nav-list');
+  const btn  = document.querySelector('.section-nav-arrow');
+  if (!list || !btn) return;
+
+  // Compute step dynamically: ~80% of visible width, min 120px, max 360px
+  const getStep = () => {
+    const vw = list.clientWidth;
+    return Math.max(120, Math.min(360, Math.round(vw * 0.8)));
+  };
+
+  // Click -> scroll right
+  btn.addEventListener('click', () => {
+    list.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  // Optional: long-press for continuous scroll (mobile-friendly)
+  let pressTimer;
+  const startPress = () => {
+    pressTimer = setInterval(() => {
+      list.scrollBy({ left: 40, behavior: 'smooth' }); // small repeated nudges
+    }, 120);
+  };
+  const endPress = () => clearInterval(pressTimer);
+
+  btn.addEventListener('mousedown', startPress);
+  btn.addEventListener('touchstart', startPress, { passive: true });
+  ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(evt =>
+    btn.addEventListener(evt, endPress)
+  );
+})();
