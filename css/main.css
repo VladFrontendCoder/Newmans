@@ -3110,23 +3110,23 @@ position: absolute;
 /* --- Soft card (Key features) --- */
 .card-soft {
   background: #f6f1e7;
-  /* warm cream */
-  border-radius: 8px;
+  font-family: var(--font-sans);
+  border-radius: 5px;
   padding: 18px 20px;
 }
 
 
 
 .card-soft__title {
-  font-weight: 700;
-  color: #1f2c3b;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 /* Inline list with dot separators */
 .prop-desc__features-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
+  gap: 2px 4px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -3144,7 +3144,10 @@ position: absolute;
   right: 4px;
   top: 0;
   color: #c39a3a;
-  /* gold bullet */
+}
+
+.prop-desc__text {
+    font-family: var(--font-sans);
 }
 
 /* Body text + thin gold rules */
@@ -3154,16 +3157,12 @@ position: absolute;
   line-height: 1.55;
 }
 
-.prop-desc__text strong {
-  font-weight: 700;
-  color: #1b2a3a;
-}
 
 .prop-desc__rule {
   border: 0;
-  border-top: 1px solid #e2c98a;
-  /* light gold line */
-  margin: 12px 0 18px;
+  border-top: 1px solid #dbb76e;
+  margin: 12px 0 11px;
+  opacity: 1;
 }
 
 /* --- Right column: placeholder wrapper for your existing booking widget --- */
