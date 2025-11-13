@@ -3139,6 +3139,7 @@ textarea.form-control {
 }
 
 h3.prop-desc__title {
+  font-size: 21px;
   border-bottom: 1px solid #133351;
 }
 
