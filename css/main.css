@@ -3037,7 +3037,7 @@ position: absolute;
 
 .prop-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 14px;
 }
@@ -3052,38 +3052,39 @@ position: absolute;
   align-items: center;
   gap: 10px 18px;
   margin: 0;
-  padding: 0;
+    padding: 0;
+    max-width: 665px;
+    width: 100%;
+    
 }
 
 .prop-tagitem {
   position: relative;
   padding-right: 18px;
   white-space: nowrap;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .prop-tagitem::after {
   content: "";
   position: absolute;
-  right: 6px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 14px;
-  background: rgba(0, 0, 0, .15);
+  height: 20px;
+  background:#dbb76e;
 }
 
 .prop-tagitem:last-child::after {
   display: none;
 }
 
-/* іконкові теги */
-.prop-tagitem.with-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.prop-tagitem.with-icon img {
+.prop-tagitem img {
   width: 20px;
 }
 
