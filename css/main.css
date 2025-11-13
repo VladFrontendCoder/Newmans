@@ -608,7 +608,8 @@ input[type="date"].field-control {
 
 .section-head h2,
 .section-head_title h1,
-.info-block h2 {
+.info-block h2,
+.prop-desc__title {
   font-size: 26px;
   font-weight: 600;
 
@@ -649,7 +650,8 @@ input[type="date"].field-control {
 
 .find__btnFilter:hover img,
 .find__btnMap:hover img,
-.heading__filter:hover img, .prop-showall:hover img {
+.heading__filter:hover img,
+.prop-showall:hover img {
   filter: invert(1);
 }
 
@@ -748,6 +750,7 @@ input[type="date"].field-control {
 }
 
 #lastminute {
+  overflow: hidden;
   background: #d7b56a;
   background-image: url("../img/lastminute-bg.png");
   background-position: center;
@@ -1232,7 +1235,6 @@ input[type="date"].field-control {
   color: #fff;
 }
 
-/* helpers */
 
 /* card */
 
@@ -2117,10 +2119,6 @@ textarea.form-control {
   background: #c2c2c2;
 }
 
-main {
-  overflow: hidden;
-}
-
 #cta-subletting .section-head img {
   width: 50px;
 }
@@ -2333,7 +2331,6 @@ main {
   font-size: 14px;
 }
 
-/* heading + filter button outside beige box */
 .heading {
   padding: 50px 0 30px;
 }
@@ -2364,7 +2361,7 @@ main {
   color: #133351;
 }
 
-/* filters panel */
+
 .filters {
   display: none;
   background: rgba(219, 183, 110, 0.3);
@@ -2578,7 +2575,7 @@ main {
   margin: 0;
 }
 
-/* page nav */
+
 .pagenav {
   display: flex;
   align-items: center;
@@ -2591,8 +2588,6 @@ main {
   padding-top: 32px;
   padding-bottom: 32px;
 }
-
-/* extras summary step (within same section) */
 
 .extra {
   display: grid;
@@ -2933,9 +2928,6 @@ main {
 }
 
 
-/* ===== Project hero ===== */
-
-/* top: headings */
 .prop-title {
   margin: 0;
   font-weight: 700;
@@ -2959,36 +2951,36 @@ main {
   font-weight: 500;
 }
 
-/* slider grid */
+
 .prop-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 14px;
 }
 
-.prop-gallery .swiper-wrapper  img {
+.prop-gallery .swiper-wrapper img {
   border-radius: 7px;
-    height: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .prop-main {
   position: relative;
-height: 400px;
+  height: 400px;
 }
 
 .prop-side {
   display: grid;
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 14px;
- height: 400px;
+  height: 400px;
 }
 
-/* tag ribbon */
+
 .prop-tag {
   position: absolute;
-left: 8px;
-    top: 8px;
+  left: 8px;
+  top: 8px;
   background: #F0842E;
   color: #fff;
   font-size: 12px;
@@ -2998,25 +2990,24 @@ left: 8px;
   font-family: var(--font-sans);
 }
 
-/* "show all" on image */
+
 .prop-showall {
-position: absolute;
-    left: 8px;
-    bottom: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-   background: #fff;
-    z-index: 2;
-    font-size: 18px;
-    padding: 5px 9px;
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  z-index: 2;
+  font-size: 18px;
+  padding: 5px 9px;
 }
 
 .prop-showall img {
   width: 20px;
 }
 
-/* swiper next as кругла золота кнопка */
 .prop-next {
   width: 46px;
   height: 46px;
@@ -3032,8 +3023,6 @@ position: absolute;
   font-size: 18px;
   color: #2b2b2b;
 }
-
-/* meta rows */
 
 .prop-row {
   display: flex;
@@ -3052,10 +3041,10 @@ position: absolute;
   align-items: center;
   gap: 10px 18px;
   margin: 0;
-    padding: 0;
-    max-width: 665px;
-    width: 100%;
-    
+  padding: 0;
+  max-width: 665px;
+  width: 100%;
+
 }
 
 .prop-tagitem {
@@ -3077,7 +3066,7 @@ position: absolute;
   transform: translateY(-50%);
   width: 1px;
   height: 20px;
-  background:#dbb76e;
+  background: #dbb76e;
 }
 
 .prop-tagitem:last-child::after {
@@ -3088,26 +3077,10 @@ position: absolute;
   width: 20px;
 }
 
-
-
-/* --- Spacing helpers for sections --- */
 .section-pad {
   padding: 40px 0;
 }
 
-
-/* --- Title "Description" with gold underline --- */
-.prop-desc__title {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 3px solid #d1b272;
-  /* gold underline */
-  line-height: 1.15;
-  font-weight: 700;
-}
-
-/* --- Soft card (Key features) --- */
 .card-soft {
   background: #f6f1e7;
   font-family: var(--font-sans);
@@ -3115,27 +3088,27 @@ position: absolute;
   padding: 18px 20px;
 }
 
-
-
 .card-soft__title {
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-/* Inline list with dot separators */
+.prop-desc__sidebar {
+  position: sticky;
+  top: 100px;
+}
+
 .prop-desc__features-list {
   display: flex;
   flex-wrap: wrap;
   gap: 2px 4px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .prop-desc__features-list li {
   position: relative;
   padding-right: 16px;
   color: #1f2c3b;
+  font-size: 18px;
 }
 
 .prop-desc__features-list li:not(:last-child)::after {
@@ -3147,10 +3120,10 @@ position: absolute;
 }
 
 .prop-desc__text {
-    font-family: var(--font-sans);
+  font-size: 18px;
+  font-family: var(--font-sans);
 }
 
-/* Body text + thin gold rules */
 .prop-desc__text p {
   margin: 0 0 12px;
   color: #223346;
@@ -3165,33 +3138,30 @@ position: absolute;
   opacity: 1;
 }
 
-/* --- Right column: placeholder wrapper for your existing booking widget --- */
-.stay-widget {
-  background: #e8d4a1;
-  /* gold panel feel; actual inner styles come from your existing block */
-  border-radius: 10px;
-  padding: 14px;
-  /* keep small padding around your embedded widget */
+h3.prop-desc__title {
+  border-bottom: 1px solid #133351;
 }
 
-/* --- Additional information card --- */
+.offer-form_project button {
+  background: #133351;
+  color: #dbb76e;
+}
+
+.stay-widget {
+  background: #dbb76e;
+  border-radius: 5px;
+  padding: 14px;
+}
+
 .info-card {
   background: #eaf0f4;
-  /* light blue-grey */
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 18px 20px 20px;
   color: #1f2c3b;
 }
 
-.info-card__title {
-  margin: 0 0 16px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #c9a65a;
-  /* gold underline */
-  font-weight: 700;
-}
-
 .info-card__item {
+  font-family: var(--font-sans);
   margin-bottom: 18px;
 }
 
@@ -3201,12 +3171,10 @@ position: absolute;
 
 .info-card__subtitle {
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: #1c2b3a;
 }
 
-.info-card p {
-  margin: 0;
-  line-height: 1.55;
-  color: #2a3a4c;
+.offer-badge_project {
+  position: static;
 }
